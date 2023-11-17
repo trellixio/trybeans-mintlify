@@ -30,12 +30,12 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
-    },
-    {
       "name": "Integrations",
       "url": "integrations"
+    },
+    {
+      "name": "API Reference",
+      "url": "api-reference"
     }
   ],
   "anchors": [
@@ -71,12 +71,12 @@
       ]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
       "group": "Integrations",
       "pages": ["integrations/judgeme", "integrations/klaviyo"]
+    },
+    {
+      "group": "API Documentation",
+      "pages": ["api-reference/authentication"]
     },
     {
       "group": "Endpoint Examples",
