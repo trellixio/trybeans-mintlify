@@ -9,9 +9,9 @@
     "url": "git+https://github.com/trellixio/trybeans-mintlify.git"
   },
   "scripts": {
-    "start": "npx mintlify dev",
+    "start": "mintlify dev",
     "lint:prettier": "prettier --check .",
-    "lint:md": "markdownlint '**/*.md' --ignore node_modules",
+    "lint:md": "markdownlint '**/*.{md,mdx}' --ignore node_modules",
     "lint": "npm run lint:prettier && npm run lint:md",
     "postinstall": "husky install"
   },

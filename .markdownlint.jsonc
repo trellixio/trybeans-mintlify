@@ -13,7 +13,7 @@
     // Number of characters for headings
     "heading_line_length": 80,
     // Number of characters for code blocks
-    "code_block_line_length": 80,
+    "code_block_line_length": 120,
     // Include code blocks
     "code_blocks": true,
     // Include tables
@@ -24,5 +24,11 @@
     "strict": false,
     // Stern length checking
     "stern": false
-  }
+  },
+
+  // MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md033.md
+  "MD033": false,
+
+  // MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md034.md
+  "MD034": false
 }
