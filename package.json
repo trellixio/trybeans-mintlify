@@ -1,0 +1,27 @@
+{
+  "name": "trybeans-mintlify",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Beans <dev@trybeans.com>",
+  "homepage": "https://docs.trybeans.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trellixio/trybeans-mintlify.git"
+  },
+  "scripts": {
+    "start": "npx mintlify dev",
+    "lint:prettier": "prettier --check .",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules",
+    "lint": "npm run lint:prettier && npm run lint:md",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "mintlify": "^4.0.59"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "markdownlint": "^0.32.1",
+    "markdownlint-cli": "^0.37.0",
+    "prettier": "^3.1.0"
+  }
+}

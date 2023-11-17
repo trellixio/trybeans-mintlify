@@ -1,7 +1,7 @@
 ---
-title: "Update User"
-api: "PUT https://api.mintlify.com/api/user"
-description: "This endpoint updates an existing user."
+title: 'Update User'
+api: 'PUT https://api.mintlify.com/api/user'
+description: 'This endpoint updates an existing user.'
 ---
 
 ### Body
@@ -15,14 +15,13 @@ description: "This endpoint updates an existing user."
 </ParamField>
 
 <ParamField body="mapping" type="object">
-  This is a JSON mapping of schema id to either the data source that this user
-  group should be associated with or id of the datasource you provided when
-  creating it.
+  This is a JSON mapping of schema id to either the data source that this user group should be associated with or id of
+  the datasource you provided when creating it.
 </ParamField>
 
 <ParamField body="properties" type="object">
-  This is a JSON object for properties assigned to this user group. These will
-  be accessible through variables in the dashboards and SQL editor
+  This is a JSON object for properties assigned to this user group. These will be accessible through variables in the
+  dashboards and SQL editor
 </ParamField>
 
 ### Response
@@ -42,9 +41,8 @@ The contents of the user group
 </ResponseField>
 
 <ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
+  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be used to identify which user group is
+  viewing the dashboard. You should save this on your end to use when rendering an embedded dashboard.
 </ResponseField>
 
 <ResponseField name="name" type="string">
@@ -60,8 +58,7 @@ The contents of the user group
 </ResponseField>
 
 <ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'
+  This is the environment tag of the user group. Possible values are 'Customer' and 'Testing'
 </ResponseField>
 
 </Expandable>
