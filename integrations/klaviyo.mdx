@@ -1,8 +1,191 @@
 ---
 title: 'Klaviyo'
-description: 'Text, title, and styling in standard markdown'
-icon: 'text-size'
+description: 'Integrate Beans with Klaviyo to sync loyalty data with your email marketing'
+icon: 'paper-plane'
+# icon: 'assets/images/integrations/klaviyo/icon.svg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+<Frame>
+  <img src="/assets/images/integrations/klaviyo/hero.webp" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+[Klaviyo](https://klaviyo.com/) is an email and sms automation platform that helps merchants
+build advanced marketing flows. The
+[Beans integration with Klaviyo](https://www.trybeans.com/blog/beans-and-klaviyo-integration)
+allows you to create personalized
+emails for your rewards program and build segmented lists using rewards program data.
+In addition, you can build custom email and sms flows based on rewards program events.
+
+## Setup
+
+1. From the Beans admin, go to **Integrations**.
+2. Look for Klaviyo in the available integrations.
+3. Click on the connect button and follow the steps.
+4. You will need to enter a **Klaviyo** **API key**.
+5. Create a [**Klaviyo API Key**](https://help.klaviyo.com/hc/en-us/articles/7423954176283) with Full Access permission.
+6. Copy and paste the Klaviyo **API key** into the designated field and click on Connect.
+
+<Frame>
+  <video controls style={{ borderRadius: '0.5rem' }}>
+    <source src="/assets/images/integrations/klaviyo/screencast-setup.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</Frame>
+
+## Metrics
+
+A metric indicates a specific type of event that occurred within the Beans app
+and was subsequently synced to your Klaviyo account.
+The following events are synced to your Klaviyo account.
+
+<AccordionGroup>
+  <Accordion title="Beans member created">
+    This event is triggered when a customer joins the loyalty program.
+    Use this metric to set up a welcome email to customers who join the rewards program.
+    The welcome email is the perfect opportunity to get shoppers excited about the loyalty program.
+
+    ```yaml
+    Beans Member ID: "acc_0e65355mlysieu"
+    Beans Member Points: "300"
+    Beans Member Points Value: "3"
+    Beans Tier: "Basic"
+    $value: "300"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans points credited">
+    This event is triggered when a customer earns points.
+    Use this metric to send customers an email notification when they earn points.
+    Customers appreciate instant gratification. Sending notifications promptly upon point accrual
+    reinforces their positive behavior and encourages repeat purchases.
+
+    ```yaml
+    Beans Member ID: "acc_08cvj8r0f4mbw1"
+    Beans Member Points: "32730"
+    Beans Member Points Value: "327.3"
+    Beans Tier: "Diamond"
+    Beans Transaction Delta: "13060"
+    Beans Transaction Rule: "rule:liana:repeat_purchase"
+    Beans Transaction Sign: "+"
+    Beans Transaction Type: "credit"
+    Beans Transaction Description: "Extra bonus for purchasing twice or more in the last 120 days"
+    $value: "32730"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans points debited">
+    This event is triggered when a customer spends or loses points.
+    Informing customers when points are debited provides transparency about how their points are used or deducted.
+
+    ```yaml
+    Beans Member ID: "acc_08cvj8r0f4mbw1"
+    Beans Member Points: "21990"
+    Beans Member Points Value: "219.9"
+    Beans Tier: "Diamond"
+    Beans Transaction Delta: "23800"
+    Beans Transaction Rule: "rule:liana:discount"
+    Beans Transaction Sign: "-"
+    Beans Transaction Type: "debit"
+    Beans Transaction Description: "Debited for a $238 discount - redeemxvzwlymi"
+    $value: "21990"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans tier downgraded">
+   This event is triggered when a customer is moved to a lower tier in the loyalty program.
+  This event, while potentially sensitive, presents an opportunity to engage with customers
+  effectively and provide a clear explanation of why the tier downgrade occurred.
+
+    ```yaml
+    Beans Member ID: "acc_08cvj8r0f4mbw1"
+    Beans Member Points: "13580"
+    Beans Member Points Value: "135.8"
+    Beans Tier: "Gold"
+    Beans Tier Old: "Diamond"
+    $value: "13580"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans tier upgraded">
+    This event is triggered when a customer is promoted to a higher tier
+    in the loyalty program. Use this event to clearly communicate the benefits and advantages
+    that come with the newly attained tier.
+
+    ```yaml
+    Beans Member ID: "acc_08cvj8r0f4mbw1"
+    Beans Member Points: "13580"
+    Beans Member Points Value: "135.8"
+    Beans Tier: "Diamond"
+    Beans Tier Old: "Gold"
+    $value: "13580"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans points reminder">
+    This event is sent periodically to remind customers about their unused points.
+    It serves as a gentle reminder to customers that they have accumulated points
+    that can be redeemed for rewards.
+
+    ```yaml
+    Beans Member ID: "acc_0000000000"
+    Beans Member Points: "500"
+    Beans Member Points Value: "5"
+    Beans Tier: "Diamond"
+    $value: "500"
+    ```
+
+  </Accordion>
+</AccordionGroup>
+
+## Event logs
+
+The events log section gives you insights into the synchronization process between Beans and Klaviyo,
+allowing you to quickly debug synchronization issues. It is an overview of the most recent
+events that triggered. It is not possible to navigate the logs to see past events.
+
+<Warning>
+  You can only inspect events log associated to a single metric at a time. Use the filter option to select the metric
+  that you want to inspect.
+</Warning>
+
+To access the events log page:
+
+1. Navigate to Klaviyo integration home page
+2. Click the **Events log** in the integration navigation menu.
+
+<Frame>
+  <img src="/assets/images/integrations/klaviyo/page-events-log.webp" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+You can also view information about a specific event by
+[checking a Profile activity log in the Klaviyo Dashboard](https://help.klaviyo.com/hc/en-us/articles/115005247088#h_01H93XCYWW5V0VAM8P1HCJXCS9).
+
+<Frame>
+  <img src="/assets/images/integrations/klaviyo/klaviyo-view-event.webp" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+## Preferences
+
+The preferences section gives you additional parameters to configure the integration.
+
+To access the preferences page:
+
+1. Navigate to Klaviyo integration home page
+2. Click on **Preferences** in the integration navigation menu.
+
+### List of settings
+
+<ResponseField name="Loyalty points reminder day" required>
+  Use this option to select a specific date upon which Beans points reminder metric will be triggered in Klaviyo for all
+  customers. If this field is blank the metric will not be triggered.
+</ResponseField>
+
+## Status
+
+This interface provides control over the status and data synchronization between Beans and Klaviyo,
+offering options to disconnect the integration, or reset the connection as needed.
+
+To access the status page:
+
+1. Navigate to Klaviyo integration home page
+2. Click on **Status** in the integration navigation menu.
