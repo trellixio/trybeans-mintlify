@@ -9,6 +9,7 @@
     "url": "git+https://github.com/trellixio/trybeans-mintlify.git"
   },
   "scripts": {
+    "dev": "mintlify dev",
     "start": "mintlify dev",
     "lint:prettier": "prettier --check .",
     "lint:md": "markdownlint '**/*.{md,mdx}' --ignore node_modules",
