@@ -39,3 +39,21 @@ You can also preview changes using PRs, which generates a preview link of the do
 
 - Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
 - Page loads as a 404 - Make sure you are running in a folder with `mint.json`
+
+## Useful Tools
+
+- [Free Image Converter](https://pixelied.com/convert/)
+- [Convert Google Doc to Markdown](https://gdoc2md.com/)
+
+## Documentations
+
+- [Learn more about Markdown](https://www.markdownguide.org/)
+- [Learn more about Mintlify](https://mintlify.com/docs/)
+
+## Inspirations
+
+- [Mintlify Docs](https://mintlify.com/docs/)
+- [Linear Docs](https://linear.app/docs/)
+- [Shopify Help Center](https://help.shopify.com/en/)
+- [Shopify Dev Docs](https://shopify.dev/docs/)
+- [Stripe Docs](https://stripe.com/docs)

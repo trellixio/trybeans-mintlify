@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "/assets/images/logo/dark.svg",
-    "light": "/assets/images/logo/light.svg"
+    "dark": "/assets/logo/dark.svg",
+    "light": "/assets/logo/light.svg"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/assets/logo/favicon.png",
   "colors": {
     "primary": "#9563FF",
     "light": "#AE87FF",
@@ -26,9 +26,25 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://app.trybeans.com"
   },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "slack",
+      "url": "https://mintlify.com/community"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://www.trybeans.com/blog"
+    }
+  ],
   "tabs": [
+    {
+      "name": "Admin",
+      "url": "admin"
+    },
     {
       "name": "Integrations",
       "url": "integrations"
@@ -38,27 +54,10 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["start/introduction", "start/quickstart", "start/development"]
     },
     {
       "group": "Essentials",
@@ -69,6 +68,22 @@
         "essentials/settings",
         "essentials/navigation"
       ]
+    },
+    {
+      "group": "Members",
+      "pages": ["admin/members/manage", "admin/members/import", "admin/members/segments", "admin/members/fields"]
+    },
+    {
+      "group": "Loyalty",
+      "pages": ["admin/loyalty/rules"]
+    },
+    {
+      "group": "Referral",
+      "pages": ["admin/referral/rules"]
+    },
+    {
+      "group": "Emails",
+      "pages": ["admin/emails/rules"]
     },
     {
       "group": "Integrations",
@@ -89,8 +104,7 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/beanshq",
+    "linkedin": "https://www.linkedin.com/company/trybeans"
   }
 }
