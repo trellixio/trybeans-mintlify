@@ -1,8 +1,99 @@
 ---
 title: 'Judge.me'
-description: 'Text, title, and styling in standard markdown'
+description: 'Manage Beans and Judge.me integration'
 icon: 'text-size'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+<Frame>
+  <img src="/assets/images/integrations/judgeme/judgeme.webp" alt="Judge.me" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+[Judge.me](https://judge.me/) is a platform that lets merchants collect and show off product and store reviews. Using Judge.me, merchants can send automatic emails to gather reviews, including photos and videos, once an order is delivered. [The Beans and Judge.me integration](https://www.trybeans.com/blog/beans-integration-with-judge-me) gives merchants the opportunity to significantly increase the number of customers who post reviews post-purchase by incentivizing them. Shoppers will therefore be rewarded with loyalty points for leaving reviews through Judge.me.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/judgeme/integrations-page.webp"
+    alt="Judge.me"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+## Setup
+
+1. From the Beans admin, go to Integrations.
+2. Look for Judge.me in the available integrations.
+3. Click on the connect button and follow the steps.
+4. Enter your shop domain to sign in or install the app.
+5. Authorize Beans to access your Judge.me account.
+
+<video
+  controls
+  src="/assets/images/integrations/judgeme/judgeme-setup.mp4"
+  className="w-full aspect-video"
+  style={{ borderRadius: '0.5rem' }}
+></video>
+
+## Rules
+
+### Points for product reviews
+
+The points for product reviews reward shoppers for each review posted. Merchants can control how frequently shoppers receive rewards for their product reviews. Merchants have the flexibility to specify a frequency limit, such as limiting rewards to once per day, once per week, once per month, or even having no restrictions on the frequency of rewarding customers for their reviews.
+
+<video
+  controls
+  src="/assets/images/integrations/judgeme/product-reviews.mp4"
+  className="w-full aspect-video"
+  style={{ borderRadius: '0.5rem' }}
+></video>
+
+<video
+  controls
+  src="/assets/images/integrations/judgeme/points-for-product-reviews.mp4"
+  className="w-full aspect-video"
+  style={{ borderRadius: '0.5rem' }}
+></video>
+
+### Points for product reviews with photos
+
+Merchants can award customers a specific amount of points when they submit product reviews along with photos. This rule will only trigger when the review posted by the customer contains an uploaded photo. When this rule is activated alongside the classic Points for product reviews, shoppers who post a review that qualifies for both rules will only receive the points credit for this rule, regardless of which rule gives the higher amount of points. Shoppers will not get points for both rules. Therefore it makes sense to always ensure that reviews with photos are rewarded with higher points than normal reviews.
+
+<video
+  controls
+  src="/assets/images/integrations/judgeme/edit-rule-product-reviews with-photo.mp4"
+  className="w-full aspect-video"
+  style={{ borderRadius: '0.5rem' }}
+></video>
+
+## Logs
+
+The log table makes it easy for merchants to view the history of all reviews and for each review to see if the shopper has been credited with points and how many points were credited to the shopper. In the event that the shopper has not been credited, the log explains why the shopper has not been credited for their review.
+
+To access the logs page
+
+1. Navigate to the Judge.me integration home page.
+2. Click on Review logs in the integration navigation menu.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/judgeme/judgeme-reviews-page.webp"
+    alt="Judge.me"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+## Status
+
+This interface provides control over the status and data synchronization between Beans and Judge.me, offering options to re-synchronize reviews, disconnect the integration, or reset the connection as needed.
+
+To access the status page
+
+1. Navigate to the Judge.me integration home page.
+2. Click on Status in the integration navigation menu.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/judgeme/judgeme-status-page.webp"
+    alt="Judge.me"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
