@@ -17,7 +17,8 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "mintlify": "^4.0.63"
+    "mintlify": "^4.0.130",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "husky": "^8.0.3",
