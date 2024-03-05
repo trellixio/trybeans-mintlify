@@ -36,9 +36,9 @@
   },
   "anchors": [
     {
-      "name": "Admin",
+      "name": "Manage",
       "icon": "hammer-brush",
-      "url": "admin"
+      "url": "manage"
     },
     {
       "name": "Integrations",
@@ -53,24 +53,16 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": ["start/introduction", "start/quickstart", "start/development"]
+      "group": "Get started",
+      "pages": ["start/introduction"]
     },
     {
       "group": "Members",
-      "pages": ["admin/members/manage", "admin/members/import", "admin/members/segments", "admin/members/fields"]
+      "pages": ["manage/members/manage", "manage/members/import"]
     },
     {
-      "group": "Loyalty",
-      "pages": ["admin/loyalty/rules"]
-    },
-    {
-      "group": "Referral",
-      "pages": ["admin/referral/rules"]
-    },
-    {
-      "group": "Emails",
-      "pages": ["admin/emails/rules"]
+      "group": "Rules",
+      "pages": ["manage/loyalty/rules", "manage/referral/rules"]
     },
     {
       "group": "Integrations",
@@ -80,5 +72,11 @@
   "footerSocials": {
     "twitter": "https://twitter.com/beanshq",
     "linkedin": "https://www.linkedin.com/company/trybeans"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/?",
+      "destination": "/start/introduction"
+    }
+  ]
 }
