@@ -126,22 +126,83 @@ The following events are synced to your Klaviyo account.
     ```
 
   </Accordion>
-  <Accordion title="Beans points reminder">
-    This event is sent periodically to remind customers about their unused points.
-    It serves as a gentle reminder to customers that they have accumulated points
-    that can be redeemed for rewards.
+  <Accordion title="Beans friend invited">
+    This event activates when a customer initiates a referral by sending an invitation.
+    Use this event to generate an email notification informing the invitee that
+    they have been invited to shop at your store, courtesy of the referrer.
+    This notification serves as a warm introduction to your store and encourages
+    the invitee to take their first step towards a rewarding shopping experience.
 
     ```yaml
-    Beans Member ID: "acc_0000000000"
-    Beans Member Points: "500"
-    Beans Member Points Value: "5"
-    Beans Tier: "Diamond"
-    Beans Member Birthday: "2000-10-05"
-    $value: "500"
+    Beans Reward Value: "500 points"
+    Beans Referrer Name: "Yan"
+    Beans Referral Link: "https://example.com?_br=BOT22!email"
+    $value: "0"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans friend rewarded">
+    This event is triggered when a referred friend successfully earns their reward.
+    It is pivotal for notifying the new customer about their available reward.
+    It's a gesture that celebrates their acceptance of the referral invitation and
+    encourages their engagement with your offerings.
+
+    ```yaml
+    Beans Reward Target: "friend"
+    Beans Reward Value: "500 points"
+    Beans Reward Code: "REFERX15"
+    $value: "0"
+    ```
+
+  </Accordion>
+  <Accordion title="Beans referrer rewarded">
+    This event triggers when the original referrer receives their reward,
+    following the successful first purchase by the person they referred.
+    It's an opportunity to use this event for sending a notification to the referrer,
+    acknowledging their successful referral and the reward they've earned as a result.
+    This notification reinforces the value of sharing referrals and
+    rewards their effort in expanding your community of customers.
+
+    ```yaml
+    Beans Reward Target: "friend"
+    Beans Reward Value: "500 points"
+    Beans Reward Code: "REFERX15"
+    $value: "0"
     ```
 
   </Accordion>
 </AccordionGroup>
+
+## Balance reminder
+
+<Warning>
+  The process for sending balance reminders through Klaviyo involves a manual step due to a specific limitation within
+  Klaviyo's system, which currently does not support the automation of periodic events. Consequently, merchants are
+  required to create these reminder campaigns manually each time they wish to notify customers about their unused
+  points.
+</Warning>
+
+Periodic balance reminder emails are a crucial component of engaging customers
+with their accumulated loyalty points. These reminders serve as a polite prompt
+to customers, highlighting that they have unused points available for redemption
+towards rewards. It’s an effective strategy to encourage repeat purchases and
+deepen customer engagement with your loyalty program.
+
+When integrating Beans with Klaviyo, balance reminder emails are facilitated through
+the creation of a dedicated campaign in Klaviyo. Beans ensures seamless synchronization
+of all necessary data, including points balances, to Klaviyo. Below is an extensive overview
+of the rewards program attributes that are synchronized to Klaviyo, enabling a smooth and efficient reminder process.
+
+    ```yaml
+    Beans Member ID: "acc_08cvj8r0f4mbw1"
+    Beans Member Points: "13580"
+    Beans Member Points Value: "135.8"
+    Beans Tier: "Gold"
+    Beans Member Birthday: "2000-10-05"
+    Beans Referral Code: "YAN22"
+    Beans Referral Code: "https://example.com?_br=YAN22!email"
+    Beans Referral Count: "4"
+    ```
 
 ## Event logs
 

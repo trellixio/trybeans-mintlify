@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Beans Help Center",
   "logo": {
     "dark": "/assets/logo/dark.svg",
     "light": "/assets/logo/light.svg"
@@ -20,8 +20,8 @@
     }
   },
   "feedback": {
-    "suggestEdit": true,
-    "raiseIssue": true,
+    "suggestEdit": false,
+    "raiseIssue": false,
     "thumbsRating": true
   },
   "topbarLinks": [
