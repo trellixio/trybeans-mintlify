@@ -1,3 +1,4 @@
 # Ignore assets files:
 /images/*
 /logo/*
+.markdownlint.jsonc
