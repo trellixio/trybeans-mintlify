@@ -12,12 +12,12 @@ This ensures that customers are automatically enrolled
 through any platform you are currently using to manage your orders.
 
 However, there are instances where you may want to manually add a customer to the rewards program.
- This can be handy on specific occasions.
+This can be handy on specific occasions.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. From the top right, click on **Add member**.
 3. Enter the **first name**, **last name** and **email** of the members that you want to add to the rewards program.
-4. Click on `Add member` button to confirm.
+4. Click on **Add member** button to confirm.
 
 <Frame>
   <img
@@ -31,13 +31,27 @@ Members added to the rewards program will receive the welcome email if you have 
 
 ## Update profile
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+Customers who join the rewards program can manage their own information.
+However, there are instances where customer information may become outdated,
+and the customer might forget to update it. In such cases, you can manually update the customer's profile.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Find the member whose information you want to update and open their profile.
+3. From the Edit dropdown menu on the top right, click on **Update profile**.
+4. Edit the customer's information as needed.
+5. Click on **Update profile** to save the changes.
 
 ## Update email addresses
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+Customers may have multiple email addresses. Beans allows customers to receive points to the same account,
+regardless of which email they use at checkout. This is ideal for customers with multiple email addresses.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Find the member whose information you want to update and open their profile.
+3. From the Edit dropdown menu on the top right, click on **Email addresses**.
+4. Click on **Add new email address**
+5. Provide the new email address and click on save.
+6. Repeat the steps as many times as needy.
 
 ## Deactivate a member
 
@@ -60,7 +74,7 @@ if their account was previously deactivate.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. Search the member that you want to reactivate using their email address and open their profile.
-3. From  the top right, click on **Reactivate account**
+3. From the top right, click on **Reactivate account**
 
 ## Delete a member
 
@@ -77,15 +91,21 @@ to use the member deactivation option instead.
 
 To view all the members of your rewards program, navigate to the Members page from the Beans admin dashboard.
 
-**Filter Members:** Use the filter option on the top right to filter the 
+**Filter Members:** Use the filter option on the top right to filter the
 list of members by activation status and points value.
 
 **Search Members:** Use the search bar at the top to find a specific customer by name, email address, or phone number.
 
 ## Perform bulk actions
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+Bulk actions are a productivity shortcut that allows you to edit multiple customer accounts simultaneously.
+Supported bulk actions include [Deactivating members](#deactivate-a-member),
+[Reactivating members](#reactivate-a-member), and [Deleting members](#delete-a-member).
+
+1. From the Beans admin go to the **Members** page.
+2. Using the checkbox on left end of the member listing, select the members to whom you want to perform the actions.
+3. Select the action to perform.
+4. Confirm the action.
 
 ## Import members
 
@@ -102,9 +122,9 @@ ensure your CSV file includes the following headers in the first row:
 - **first_name (optional):** The first name or given name of the user to import.
 - **last_name (optional):** The last name or family name of the user to import.
 - **points (required):** The amount of points that the user should have after the import.
-If the user already exists has less points, but has less points, they will be credited the
-difference so that the amount of points after the import matches this amount provided in the CSV.
-If the user has less points, they will be no change to their balance after the import.
+  If the user already exists has less points, but has less points, they will be credited the
+  difference so that the amount of points after the import matches this amount provided in the CSV.
+  If the user has less points, they will be no change to their balance after the import.
 
 Here is a [sample CSV file](/assets/images/admin/members/beans-import-members.csv) that you can download for reference.
 
@@ -119,3 +139,11 @@ You will receive a confirmation email once the import is finished.
 The confirmation email will include a list of any errors encountered during the import.
 After the import process is complete, review the imported members in the "Members"
 section to ensure all data has been accurately imported.
+
+## Export members
+
+You can request an export of all existing members in your rewards program in a
+comma-separated values (CSV) formatted file. The CSV file will contain at
+least the email and points balance of each customer.
+
+To request a CSV export, please reach out to the Beans support team.

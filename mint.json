@@ -58,11 +58,11 @@
     },
     {
       "group": "Members",
-      "pages": ["manage/members/manage", "manage/members/import"]
+      "pages": ["manage/members/manage"]
     },
     {
       "group": "Rules",
-      "pages": ["manage/loyalty/rules", "manage/referral/rules"]
+      "pages": ["manage/loyalty/rules"]
     },
     {
       "group": "Integrations",
