@@ -6,8 +6,28 @@ icon: 'user-gear'
 
 ## Add a member
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+The easiest way to automatically add customers to your rewards program is to
+[integrate Beans](/integrations) with your eCommerce platform, POS, or CMS.
+This ensures that customers are automatically enrolled
+through any platform you are currently using to manage your orders.
+
+However, there are instances where you may want to manually add a customer to the rewards program.
+ This can be handy on specific occasions.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. From the top right, click on **Add member**.
+3. Enter the **first name**, **last name** and **email** of the members that you want to add to the rewards program.
+4. Click on `Add member` button to confirm.
+
+<Frame>
+  <img
+    src="/assets/images/admin/members/add-member.gif"
+    alt="Rule product reviews"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+Members added to the rewards program will receive the welcome email if you have set it up.
 
 ## Update profile
 
@@ -21,25 +41,81 @@ Curabitur quis sapien nec tortor dictum gravida.
 
 ## Deactivate a member
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+Deactivating a member is a reversible way to prevent a customer from benefiting from the rewards program.
+It effectively blacklists the member, stopping them from receiving emails, earning points, spending points,
+referring friends, and accessing their earned rewards. No data will be deleted, and you can reactivate
+the account later if needed. Even when a member is deactivated, their transaction history remains accessible.
+When a customer chooses to opt out of the rewards program or reports rewards program notifications as spam,
+their account is automatically deactivated.
 
-## Activate a member
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Find the member that you want to deactivate and open their profile.
+3. From the Edit dropdown menu on the top right, click on **Deactivate account**
+4. Confirm the deactivation.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+## Reactivate a member
+
+All members are active by default. You would only need to reactivate a member,
+if their account was previously deactivate.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Search the member that you want to reactivate using their email address and open their profile.
+3. From  the top right, click on **Reactivate account**
 
 ## Delete a member
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+Deleting a member is a radical solution that effectively erases all the customer data in
+the system including their transaction history. This action is irreversible. It is recommended
+to use the member deactivation option instead.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Find the member that you want to deactivate and open their profile.
+3. From the Edit dropdown menu on the top right, click on **Delete member¬**
+4. Confirm the deletion.
 
 ## List, filter, and search members
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
-Curabitur quis sapien nec tortor dictum gravida.
+To view all the members of your rewards program, navigate to the Members page from the Beans admin dashboard.
+
+**Filter Members:** Use the filter option on the top right to filter the 
+list of members by activation status and points value.
+
+**Search Members:** Use the search bar at the top to find a specific customer by name, email address, or phone number.
 
 ## Perform bulk actions
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus.
 Curabitur quis sapien nec tortor dictum gravida.
+
+## Import members
+
+Beans offers a simple way to import data in bulk using a comma-separated values (CSV) formatted file.
+This is handy if you are migrating from a third-party solution to Beans or
+if you want to bulk adjust a large number of customers' balances.
+
+For small updates to a few customers' points balances, manual adjustments are recommended.
+
+Using a spreadsheet software such as Microsoft Excel or Google Sheets,
+ensure your CSV file includes the following headers in the first row:
+
+- **email (required):** The email address of the user to import .
+- **first_name (optional):** The first name or given name of the user to import.
+- **last_name (optional):** The last name or family name of the user to import.
+- **points (required):** The amount of points that the user should have after the import.
+If the user already exists has less points, but has less points, they will be credited the
+difference so that the amount of points after the import matches this amount provided in the CSV.
+If the user has less points, they will be no change to their balance after the import.
+
+Here is a [sample CSV file](/assets/images/admin/members/beans-import-members.csv) that you can download for reference.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Click on **Actions > Import Members** in the top right corner.
+3. Follow the steps and upload the CSV file
+4. Ensure that the fields from your CSV file are correctly mapped to the corresponding Beans fields.
+5. Once all fields are mapped correctly, click on the "Start Import" button to begin the import process.
+
+Depending on the amount of data, the import process may take a few hours to complete.
+You will receive a confirmation email once the import is finished.
+The confirmation email will include a list of any errors encountered during the import.
+After the import process is complete, review the imported members in the "Members"
+section to ensure all data has been accurately imported.
