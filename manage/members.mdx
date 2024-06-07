@@ -1,6 +1,6 @@
 ---
-title: 'Manage members'
-description: 'List, search, add, edit, activate, deactivate or delete a member.'
+title: 'Members'
+description: 'List, search, add, edit, activate, deactivate, delete, or adjust balance for a member.'
 icon: 'user-gear'
 ---
 
@@ -13,10 +13,11 @@ through any platform you are currently using to manage your orders.
 
 However, there are instances where you may want to manually add a customer to the rewards program.
 This can be handy on specific occasions.
+Members added to the rewards program will receive the welcome email if you have set it up.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. From the top right, click on **Add member**.
-3. Enter the **first name**, **last name** and **email** of the members that you want to add to the rewards program.
+3. Enter the **first name**, **last name** and **email** of the member that you want to add to the rewards program.
 4. Click on **Add member** button to confirm.
 
 <Frame>
@@ -27,7 +28,19 @@ This can be handy on specific occasions.
   />
 </Frame>
 
-Members added to the rewards program will receive the welcome email if you have set it up.
+## Adjust a member's balance
+
+Beans features a powerful automated rules engine that allows you to automatically
+reward customers when they perform an action. Occasionally,
+you may want to manually credit or debit a customer's Beans account.
+
+1. From the Beans admin dashboard, navigate to the **Members** page.
+2. Find the member whose balance you want to adjust and open their profile.
+3. From the Edit dropdown menu on the top right, click on **Adjust balance**.
+4. In the **Points** field, enter a positive amount to give the customer extra points,
+   or enter a negative amount to subtract points from the customer's balance.
+5. In the **Description** field, enter a reason for the manual transaction.
+   This description will be visible to the customer.
 
 ## Update profile
 
@@ -43,13 +56,14 @@ and the customer might forget to update it. In such cases, you can manually upda
 
 ## Update email addresses
 
-Customers may have multiple email addresses. Beans allows customers to receive points to the same account,
-regardless of which email they use at checkout. This is ideal for customers with multiple email addresses.
+Beans allows customers to receive points to the same account,
+regardless of which email they use at checkout.
+This is ideal for customers with multiple email addresses.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. Find the member whose information you want to update and open their profile.
 3. From the Edit dropdown menu on the top right, click on **Email addresses**.
-4. Click on **Add new email address**
+4. Click on **Add new email address**.
 5. Provide the new email address and click on save.
 6. Repeat the steps as many times as needy.
 
@@ -64,17 +78,17 @@ their account is automatically deactivated.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. Find the member that you want to deactivate and open their profile.
-3. From the Edit dropdown menu on the top right, click on **Deactivate account**
+3. From the Edit dropdown menu on the top right, click on **Deactivate account**.
 4. Confirm the deactivation.
 
 ## Reactivate a member
 
 All members are active by default. You would only need to reactivate a member,
-if their account was previously deactivate.
+if their account was previously deactivated.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. Search the member that you want to reactivate using their email address and open their profile.
-3. From the top right, click on **Reactivate account**
+3. From the top right, click on **Reactivate account**.
 
 ## Delete a member
 
@@ -84,37 +98,37 @@ to use the member deactivation option instead.
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. Find the member that you want to deactivate and open their profile.
-3. From the Edit dropdown menu on the top right, click on **Delete member¬**
+3. From the Edit dropdown menu on the top right, click on **Delete member**.
 4. Confirm the deletion.
 
 ## List, filter, and search members
 
-To view all the members of your rewards program, navigate to the Members page from the Beans admin dashboard.
+To view all the members of your rewards program, navigate to the **Members** page from the Beans admin dashboard.
 
 **Filter Members:** Use the filter option on the top right to filter the
 list of members by activation status and points value.
 
-**Search Members:** Use the search bar at the top to find a specific customer by name, email address, or phone number.
+**Search Members:** Use the search bar at the top to find a specific customer
+by id, name, email address, or phone number.
 
 ## Perform bulk actions
 
 Bulk actions are a productivity shortcut that allows you to edit multiple customer accounts simultaneously.
-Supported bulk actions include [Deactivating members](#deactivate-a-member),
-[Reactivating members](#reactivate-a-member), and [Deleting members](#delete-a-member).
+Supported bulk actions include [deactivating members](#deactivate-a-member),
+[reactivating members](#reactivate-a-member), and [deleting members](#delete-a-member).
 
 1. From the Beans admin go to the **Members** page.
-2. Using the checkbox on left end of the member listing, select the members to whom you want to perform the actions.
-3. Select the action to perform.
+2. Using the checkboxes on the left end of the member listing, select the members you want to perform the action on.
+3. Select the desired action from the available options.
 4. Confirm the action.
 
 ## Import members
 
+<Tip>For small updates to a few customers' points balances, manual adjustments are recommended.</Tip>
+
 Beans offers a simple way to import data in bulk using a comma-separated values (CSV) formatted file.
 This is handy if you are migrating from a third-party solution to Beans or
 if you want to bulk adjust a large number of customers' balances.
-
-For small updates to a few customers' points balances, manual adjustments are recommended.
-
 Using a spreadsheet software such as Microsoft Excel or Google Sheets,
 ensure your CSV file includes the following headers in the first row:
 
@@ -122,17 +136,23 @@ ensure your CSV file includes the following headers in the first row:
 - **first_name (optional):** The first name or given name of the user to import.
 - **last_name (optional):** The last name or family name of the user to import.
 - **points (required):** The amount of points that the user should have after the import.
-  If the user already exists has less points, but has less points, they will be credited the
-  difference so that the amount of points after the import matches this amount provided in the CSV.
-  If the user has less points, they will be no change to their balance after the import.
+  If the user already exists and has fewer points, they will be credited with the difference
+  so that the total points after the import matches the amount provided in the CSV.
+  If the user has more points, there will be no change to their balance after the import.
 
-Here is a [sample CSV file](/assets/images/admin/members/beans-import-members.csv) that you can download for reference.
+<Info>
+  Here is a{' '}
+  <a href="/assets/images/admin/members/beans-import-members.csv" download>
+    sample CSV file
+  </a>
+  that you can download for reference.
+</Info>
 
 1. From the Beans admin dashboard, navigate to the **Members** page.
 2. Click on **Actions > Import Members** in the top right corner.
 3. Follow the steps and upload the CSV file
 4. Ensure that the fields from your CSV file are correctly mapped to the corresponding Beans fields.
-5. Once all fields are mapped correctly, click on the "Start Import" button to begin the import process.
+5. Once all fields are mapped correctly, click on the "Start import" button to begin the import process.
 
 Depending on the amount of data, the import process may take a few hours to complete.
 You will receive a confirmation email once the import is finished.

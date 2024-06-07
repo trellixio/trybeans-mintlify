@@ -1,0 +1,50 @@
+---
+title: 'Loyalty'
+description: 'Get X points for each dollar spent in our shop.'
+icon: 'heart'
+---
+
+<Info>
+  The loyalty rule is one of the cornerstone rules of the rewards program and is active by default for all rewards
+  programs.
+</Info>
+
+<Tip>The recommended value for this rule is between 5 and 20 points per dollar spent in the store.</Tip>
+
+The loyalty rule determines how customers are rewarded for their purchases in your shop.
+By offering points for each dollar spent, you incentivize customers to return and make additional purchases,
+thereby increasing customer retention and satisfaction.
+This rule allows you to specify the number of points customers will
+earn for every dollar (or equivalent currency unit) spent in your store.
+
+### How points are calculated
+
+Points are calculated based on the final value of the order after applying discounts
+but before adding shipping fees and taxes.
+This method ensures that the rewards are fair and reflect the actual spend on products.
+
+For example, consider the following order details:
+
+- Rule value: 5 points/$
+- Subtotal (Cart value): $100
+- Discount (Coupon code): $20
+- Shipping Fees: $30
+- Taxes: $40
+- Total: $150
+
+In this scenario, points are awarded based on the subtotal after the discount.
+The customer will earn points on the $80 spent on products, excluding shipping fees and taxes.
+
+```math
+Points Earned = Rule value * (Subtotal − Discount) = 5 points/$ * ($100−$20) = 400 points
+```
+
+### Order status
+
+**Payment status**: Customers are awarded points only when the order has been paid.
+Orders pending payment do not receive points.
+
+**Order cancellations**: When an order is cancelled, the points awarded for that order are also cancelled.
+
+**Partial refunds**: When an order is partially refunded, the customer loyalty points associated with that order
+are removed in proportion to the amount refunded. This maintains the accuracy of the rewards program.

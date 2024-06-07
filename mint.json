@@ -57,12 +57,23 @@
       "pages": ["start/introduction"]
     },
     {
-      "group": "Members",
-      "pages": ["manage/members/manage"]
+      "group": "Manage",
+      "pages": ["manage/members"]
     },
     {
       "group": "Rules",
-      "pages": ["manage/loyalty/rules"]
+      "pages": [
+        "manage/rules/loyalty",
+        "manage/rules/redemption",
+        "manage/rules/register",
+        "manage/rules/booster",
+        "manage/rules/frequency",
+        "manage/rules/birthday",
+        "manage/rules/referrer",
+        "manage/rules/social",
+        "manage/rules/review",
+        "manage/rules/expiration"
+      ]
     },
     {
       "group": "Integrations",
