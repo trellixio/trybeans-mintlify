@@ -9,4 +9,112 @@ icon: 'circle-dollar'
   programs.
 </Info>
 
-<Tip>The value of this rule cannot be edited.</Tip>
+<Warning>The value of this rule cannot be edited.</Warning>
+
+The redemption rule defines how customers can use their points.
+Points have a dollar value (or equivalent currency unit).
+Points can be redeemed by shoppers during checkout to get a discount on their purchase.
+The redemption rule, also referred to as the redemption rate,
+is the conversion rate used to compute the value of the points accumulated by customers.
+It is set to 100 points are worth $1 (or equivalent currency unit).
+
+## How it works
+
+Customers have the option to use their points during the checkout process.
+When a customer decides to redeem their points, the maximum amount of
+redeemable points for the order is withdrawn from their Beans account and applied to the order.
+Customers do not decide on the quantity of points they want to redeem.
+The discount does not apply to shipping fees.
+
+For example, consider the following order:
+
+- Subtotal (Cart value): $100
+- Shipping Fees: $20
+- Total: $120
+
+The shopper has a balance of 3,500 points. When they choose to redeem,
+they will get a discount of \$35 = 3,500 points / 100 points/\$.
+This discount will decrease the subtotal value of the cart by $35.
+
+```math
+Discount = Points balance / 100
+```
+
+## Settings
+
+The redemption can be configured to maximize your business goals.
+It is possible to set a maximum discount by redemption as a percentage of the cart value,
+to force customers to reach a minimum balance before being able to redeem,
+or limit redemption to a collection of items.
+The redemption options differ by integration and can be configured at the integration level.
+
+## Redemption rate
+
+The default redemption rate is the best rate to, psychologically,
+maximize customers' engagement in your rewards program.
+It is easier for shoppers to compute the points value when 100 points are worth \$1, than
+when 250 points are worth \$1. It also offers the best granularity to configure your rewards program.
+
+For example, a redemption rate of 10 points to \$1
+makes it impossible to give customers less than 10% cashback value on orders.
+With such a rate, the minimum number of points you could award to a customer per dollar
+spent is 1 point which would be 10 cents.
+Conversely, a redemption rate of 1,000 points to \$1 creates unnecessary inflation that decreases the value of the points.
+If you need to collect a thousand units of something before just getting a dollar discount, it does not sound enticing.
+
+While the redemption rate is fixed, it is worth noting that all the other rules' values are customizable.
+This implies that you still have 100% control over the value of your rewards program.
+You still decide the value of the reward awarded to customers.
+In addition, the redemption settings allow
+you to set how customers can use their points.
+
+## Pending debits
+
+A pending debit transaction occurs when the customer attempts to redeem their points.
+At the moment a shopper attempts to redeem their points during a purchase, a debit is created with the status pending.
+This means that the debit is not yet fully recorded into the customer's account history.
+Once the customer completes the order, the debit status is
+updated from pending to committed and the transaction will be recorded in the history.
+
+The pending state exists to prevent customers from exploiting the system.
+For example, a customer could try to redeem multiple orders
+at the same time and get more discounts than they are allocated.
+It also allows customers to cancel the redemption process at any time without any drawback.
+
+The pending debits can be monitored by the merchant in the Beans admin dashboard when looking at a
+member's transactions history.
+
+## Frequently Asked Questions
+
+#### Why is the default redemption rate 100 points to $1?
+
+The default redemption rate of 100 points to $1 makes it easier for
+both merchants and shoppers to know the value of points.
+For example, if you give the customer 5 points for each dollar spent, this would be equivalent to 5% cashback.
+So it makes it easier to resonate in terms of percentage.
+It is worth noting that in the Beans system, points can only be whole numbers, so you cannot give a decimal amount of points.
+So the default rate gives you the best granularity. 1 point is worth ¢1 (one cent).
+[Learn more about the redemption rate](/manage/rules/redemption#redemption-rate)
+
+#### Is it possible to update the redemption rate to 1 point worth $1?
+
+This is a frequent question that we get from merchants.
+This is in fact a very bad idea.
+Since in the Beans system points can only have integer values,
+this would mean that if you are giving your customers 1 point per dollar spent,
+they will get 100% cashback. Better list your products for free.
+
+#### What if my local currency is inflated and has a lot of digits?
+
+In some currencies, product prices are already in the thousands.
+And the default rate of 100 points to 1 unit of currency makes
+it possible for the customer to have a large digit amount of points, for example, millions or billions of points.
+While this is not a technical limitation, it can disturb the customer experience and cause display overflow in some places.
+The Beans team is aware of this issue and is working on solutions.
+
+#### Will there be any way in the future to adjust the redemption rate?
+
+At this stage, our team is exploring solutions to make Beans even more accessible to more merchants,
+especially those who are working with an "inflated currency".
+There is a feature request on our [roadmap](https://beans.productlane.io/roadmap) about it.
+We encourage you to upvote and contribute by sharing your use case.

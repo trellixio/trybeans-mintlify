@@ -58,7 +58,15 @@
     },
     {
       "group": "Manage",
-      "pages": ["manage/admin/members"]
+      "pages": [
+        "manage/admin/members",
+        "manage/admin/rules",
+        "manage/admin/tiers",
+        "manage/admin/history",
+        "manage/admin/analytics",
+        "manage/admin/integrations",
+        "manage/admin/settings"
+      ]
     },
     {
       "group": "Rules",
@@ -70,6 +78,7 @@
         "manage/rules/frequency",
         "manage/rules/birthday",
         "manage/rules/referrer",
+        "manage/rules/invitation",
         "manage/rules/social",
         "manage/rules/review",
         "manage/rules/expiration"
@@ -79,9 +88,10 @@
       "group": "Integrations",
       "pages": [
         "integrations/woocommerce",
+        "integrations/shopify",
         "integrations/facebook",
-        "integrations/judgeme",
         "integrations/instagram",
+        "integrations/judgeme",
         "integrations/klaviyo",
         "integrations/twitter"
       ]
