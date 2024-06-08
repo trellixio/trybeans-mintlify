@@ -1,7 +1,41 @@
 ---
 title: 'Repeat purchase'
-description: 'Get X times as many points on your second purchase in an interval of Y days.'
+description: 'Get X% bonus points on your second purchase in an interval of {period} days.'
 icon: 'cart-shopping-fast'
 ---
 
-<Tip>The recommended value for this rule is 2x multiplier.</Tip>
+<Warning>This rule requires the activation of the [Loyalty rule](/manage/rules/loyalty).</Warning>
+
+<Tip>
+  The recommended value for this rule is between 50% and 100% bonus points for repeat purchases within average order
+  frequency value.
+</Tip>
+
+The repeat purchase rule is designed to encourage customers to make a second purchase within
+a specified time frame by offering bonus points. This rule is an excellent way to increase repeat
+business and reward customers for their continued loyalty. The repeat purchase rule can be customized
+to fit your business goals, allowing you to define the percentage of bonus points awarded and the interval period.
+
+## How it works
+
+When a customer makes a second purchase within the specified interval period,
+they receive a percentage of bonus points based on the value of their purchase, in addition to
+the points they have received according the [Loyalty rule](/manage/rules/loyalty).
+
+For example, consider the following order details:
+
+- Loyalty rule value: 10 points/$
+- Cart booster rule bonus: 50%
+- Repeat purchase rule interval: 90 days
+- First purchase subtotal: $50
+- First purchase subtotal: $70
+
+In this scenario, if the customer makes a second purchase of $70 within 90 days of their first purchase of $50,
+they will qualify for the repeat purchase rule bonus.
+The customer will get 700 points for their loyalty according to the value set for the loyalty rule.
+In addition, the customer will receive 50% of the points they earned through the loyalty rule, thus 350 points.
+In total, the customer will be awarded 700 points + 350 points = 1,050 points for the second purchase.
+
+```math
+Bonus points earned = 50% * 10 points/$ * $70 = 350 points
+```

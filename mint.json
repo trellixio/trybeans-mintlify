@@ -58,7 +58,7 @@
     },
     {
       "group": "Manage",
-      "pages": ["manage/members"]
+      "pages": ["manage/admin/members"]
     },
     {
       "group": "Rules",

@@ -1,7 +1,44 @@
 ---
 title: 'Cart booster'
-description: 'Get X times as many points when you spend more than $amount in our shop'
+description: 'Get X% bonus points when you spend more than ${threshold_amount} in our shop'
 icon: 'cart-plus'
 ---
 
-<Tip>The recommended value for this rule is 2x multiplier.</Tip>
+<Warning>This rule requires the activation of the [Loyalty rule](/manage/rules/loyalty).</Warning>
+
+<Tip>
+  The recommended value for this rule is between 50% and 100% bonus points for orders over 2x your average order value.
+</Tip>
+
+The cart booster rule is designed to encourage higher spending by offering
+bonus points for purchases that exceed a specified amount.
+This rule is a great way to increase your average order value and reward customers for larger purchases.
+The cart booster rule can be customized to fit your business goals,
+allowing you to define the percentage of bonus points awarded and the spending threshold.
+
+## How it works
+
+When a customer's order total exceeds the specified amount, they receive a percentage of bonus points
+based on the value of their purchase in addition to
+the points they have received according the [Loyalty rule](/manage/rules/loyalty).
+
+For example, consider the following order details:
+
+- Loyalty rule value: 10 points/$
+- Cart booster rule bonus: 50%
+- Cart booster threshold amount: $100
+- Subtotal (Cart value): $130
+- Discount (Coupon code): $20
+- Shipping Fees: $0
+- Taxes: $0
+- Total: $110
+
+In this scenario, the order qualifies for the cart booster rule bonus
+since its total of $110 exceeds the threshold of $100.
+The customer will get 1,100 points for their loyalty according to the value set for the loyalty rule.
+In addition, the customer will receive 50% of the points they earned through the loyalty rule, thus 550 points.
+In total, the customer will be awarded 1,100 points + 550 points = 1,650 points.
+
+```math
+Bonus points earned = 50% * 10 points/$ * $110 = 550 points
+```
