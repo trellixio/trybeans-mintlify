@@ -52,4 +52,6 @@ Orders pending payment do not receive points.
 **Order cancellations**: When an order is cancelled, the points awarded for that order are also cancelled.
 
 **Partial refunds**: When an order is partially refunded, the customer loyalty points associated with that order
-are removed in proportion to the amount refunded. This maintains the accuracy of the rewards program.
+are reverted in proportion to the amount refunded. This maintains the accuracy of the rewards program.
+Total refunds are treated the same way as partial refunds.
+Order cancellation is preferred to total refund, as it maintains a cleaner history of transactions.
