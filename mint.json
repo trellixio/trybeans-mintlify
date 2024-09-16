@@ -94,7 +94,8 @@
         "integrations/klaviyo",
         "integrations/twitter",
         "integrations/Beansemail",
-        "integrations/tokenify"
+        "integrations/tokenify",
+        "integrations/bigcommerce"
       ]
     }
   ],
