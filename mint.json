@@ -92,7 +92,8 @@
         "integrations/instagram",
         "integrations/judgeme",
         "integrations/klaviyo",
-        "integrations/twitter"
+        "integrations/twitter",
+        "integrations/tokenify"
       ]
     }
   ],
