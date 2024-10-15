@@ -30,3 +30,28 @@ Beans provides a straightforward solution to address this without any negative s
 1. From the Beans admin dashboard, navigate to the Shopify integration home page.
 2. Select **Status** in the integration navigation menu.
 3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+
+### Shopify API rate
+
+Shopify uses three different methods for managing rate limits. Different APIs use different methods depending on the use
+case.
+
+The various types of rate limits your apps will encounter are:
+
+- **Request-based limits**: Apps can make a maximum number of requests per minute.
+
+For example, 40 API requests within 60 seconds. Each request counts equally, regardless of how much or how little data is returned. This method is used by the REST Admin API.
+
+- **Time-based limits**: Apps can make requests that take a maximum amount of time per minute.
+
+For example, 120 requests within 60 seconds, with each request taking 0.5 seconds to return. More complex requests take longer and therefore take up a proportionally larger share of the limit. This method is used by the Storefront API.
+
+- **Calculated query costs**: Apps can make requests that cost a maximum number of points per minute.
+
+For example, 1000 points within 60 seconds. More complex requests cost more points and therefore take up a proportionally larger share of the limit. This method is used by the GraphQL API.
+
+Our application communicates with Shopify via their REST API and Shopify limit API calls per second so there is a number of customers that can redeem at the same time.
+
+For example, if your shop has a lot of traffic and many customers try to redeem their points at once, this can lead to a Shopify Rate Limitation making customers unable to redeem their points. To solve this they simply have to wait and try again a few minutes later.
+
+To read more about Shopify API Rate Limitation, click [here.](https://shopify.dev/docs/api/usage/rate-limits)
