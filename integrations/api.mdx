@@ -19,3 +19,80 @@ Webhooks enable Beans to receive notifications when specific events occur in you
 an order. These webhooks allow Beans to execute event-driven actions, like rewarding customers after a purchase.
 
 [Setup Beans Webhooks]()
+
+## Storefront
+
+Setting up beans.js on your online store
+
+Beans.js is a lightweight JavaScript library designed for easy integration of Beans Ultimate with any e-commerce store.
+With just a few lines of code, you can add all Beans apps to your online store. It also provides flexibility, enabling
+you to customize the storefront display to fit your specific needs.
+
+### Including beans.js
+
+Include the beans.js script on each page of your store. It should always be loaded directly from [https://cdn.trybeans.com](https://cdn.trybeans.com), rather than
+included in a bundle or hosted yourself.
+
+```
+<script src="https://cdn.trybeans.com/lib/ultimate/edge/vanilla/ultimate.beans.js?shop=<<public_id>>"></script>
+```
+
+The public_id is a unique identification key that represents your shop. You can get it by reaching out to Beans customer support.
+
+### Initializing beans.js
+
+The following script will help Beans identify the currently authenticated user. Include this script on every page of the
+store.
+
+<script>window.beans_cjs_id='1234567890'; window.beans_cjs_email='customer@email.com';</script>
+
+- **window.beans_cjs_id**: Represents the id of the currently authenticated customer and should be dynamically set.
+
+- **window.beans_cjs_email**: Represents the email of the currently authenticated customer and should be dynamically set.
+
+```
+const config = {
+  currentPage: '',
+  onLogin: () => (window.location = '/login'),
+  onRegister: () => (window.location = '/register'),
+  liana: {
+    onAbout: () => (window.location = '/rewards'),
+    pagePlaceholder: document.getElementById('rewards'),
+  },
+  bamboo: {
+    onAbout: () => (window.location = '/referral'),
+    pagePlaceholder: document.getElementById('referral'),
+  },
+};
+```
+
+- **currentPage**: Should contain the current page, should be one of the following:
+  product|cart|checkout|login|register|reward or empty for the other pages
+
+- **onLogin**: This should be a function that redirects to your store login page. In the example above the login page is located at /login. Make sure to replace it with the right location if it is not the one used in your store.
+
+- **onRegister**: This should be a function that redirects to your store registration page. In the example above the registration page is located at /register. Make sure to replace it with the right location if it is not the one used in your store.
+
+- **liana.onAbout**: This should be a function that redirects to your store reward program page. In the example above the reward, program page is located at /rewards. Make sure to replace it with the right location if it is not the one used in your store.
+
+- **liana.pagePlaceholder**: On the page created for the rewards program, you should create a container for beans.js to render the program page inside. pagePlaceholder should contain that container. In the example above the container has been named rewards, add the following HTML snippet to the rewards program page to use the same value for pagePlaceholder.
+
+```
+<div id='rewards'></div>
+```
+
+- **bamboo.onAbout**: This should be a function that redirects to your store referral program page. In the example above the reward, program page is located at /referral. Make sure to replace it with the right location if it is not the one used in your store.
+
+- **bamboo.pagePlaceholder**: On the page created for the referral program, you should create a container for beans.js to render the program page inside. pagePlaceholder should contain that container. In the example above the container has been named referral, add the following HTML snippet to the referral program page to use the same value for pagePlaceholder.
+
+```
+<div id='referral'></div>
+```
+
+Just below the initialization data add the following line to initialize beans.js
+
+```
+Beans3.Radix.init(config);
+```
+
+You’ve successfully integrated Beans with your storefront. The Rewards and Referral Program page should now be visible on your store.
