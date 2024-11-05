@@ -8,6 +8,10 @@ icon: 'shopify'
   <img src="/assets/images/integrations/shopify/hero.webp" alt="Shopify" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
+<Note>
+  This guide will help you integrate Beans with Shopify to create a powerful loyalty rewards system for your store. 
+</Note>
+
 Shopify is a leading e-commerce platform that provides
 merchants with the tools they need to sell products online efficiently.
 [Integrating Beans with Shopify](https://www.trybeans.com/integrations/radix:shopify)
@@ -17,10 +21,9 @@ purchases, encouraging repeat business and fostering a loyal customer base.
 
 ## Setup
 
-To begin, install the [Beans app for Shopify](https://apps.shopify.com/beans)
-through the Shopify App Store. Follow the
-[Shopify guideline](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
-on how to install an app through the Shopify App Store.
+1. Install the [Beans app for Shopify](https://apps.shopify.com/beans) through the Shopify App Store
+2. Follow the [Shopify installation guide](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
+3. Once installed, you'll be guided through a simple configuration process to set up your rewards program
 
 ## Reinstall
 
@@ -57,3 +60,92 @@ Our application communicates with Shopify via their REST API and Shopify limit A
 For example, if your shop has a lot of traffic and many customers try to redeem their points at once, this can lead to a Shopify Rate Limitation making customers unable to redeem their points. To solve this they simply have to wait and try again a few minutes later.
 
 To read more about Shopify API Rate Limitation, click [here.](https://shopify.dev/docs/api/usage/rate-limits)
+
+## Using Discount Codes with Points Redemption on Shopify
+
+Beans rewards program applies points redemptions using discount codes. When a customer redeems their points, a discount
+code is automatically generated and applied to their cart.
+
+#### Shopify (Classic)
+
+If you are using the classic version of Shopify (not using Shopify Plus), customers are restricted to using only one discount
+code at checkout. This means if a customer wishes to redeem their points, they cannot simultaneously apply another discount code.
+
+#### Shopify Plus
+
+Shopify Plus merchants have the option to allow multiple discount codes at checkout. However, enabling this feature
+requires contacting Shopify to activate it specifically for your store. Merchants considering this should be aware of the potential
+complexities:
+
+- **Mutually Exclusive Discounts**: Even when multiple discounts are technically allowed, certain codes might not be compatible with one another. For
+  example, one code might offer a percentage off the total cart value, which could conflict with a fixed amount off provided by the
+  points redemption.
+
+- **Custom Redemption Rules**: If you have set specific conditions for using points, such as minimum cart values or certain items being
+  exempt from discounts, these rules might conflict with other active discount codes.
+
+
+## Template Migration
+
+This section is optional and, in most cases, not required.
+
+Template Migration helps the app authenticate customers when they log into your store. By default, the app automatically migrates your templates,
+so no action is needed. However, if you prefer to migrate your template manually, follow the steps below.
+
+If this is your first time editing a Shopify template, please ensure you understand how to do so by reviewing Shopify’s guide:
+[How to Edit Shopify Templates](https://help.shopify.com/en/manual/using-themes/change-the-layout/theme-code)
+
+To manually migrate your template:
+
+Edit the **layout/theme.liquid** file.
+Insert the following code just before the closing tag in the **$</head>$** section.
+
+```yaml
+<script>window.beans_cjs_id = '{{ customer.id }}'; window.beans_cjs_email = '{{ customer.email }}';</script>
+```
+
+<Frame>
+  <img
+    src="/assets/images/integrations/shopify/migration-code.webp"
+    alt="migration code"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+## Shopify OS 2.0
+
+If you are using a Shopify Online Store 2.0 theme, it is essential to enable the Beans app in your Shopify theme.
+The new Online Store 2.0 is an improvement released by Shopify to facilitate
+full integration for app developers with a merchant's shop.
+
+1. From the Shopify dashboard, go to your Themes page.
+2. Locate the Current theme section and click on Customize.
+3. Click on Theme Settings, go to the App Embed tab, then locate the Beans Ultimate app extension and switch it on.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/shopify/theme-extension.png"
+    alt="Shopify Theme extension"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+## Rewards page
+
+Beans automatically adds a rewards page to your shop.
+By default, you can access the page at `https://example.myshopify.com/pages/rewards`, assuming
+your website's full URL is `https://example.myshopify.com`.
+
+The Shopify navigation tool let you dynamically set up a navigation menu for your website.
+We recommend adding the link to the rewards program in the Main menu in order to make it easy for your customers to access.
+Here is how to do: [Editing Shopify store menu](https://help.shopify.com/en/manual/sell-online/online-store/menus-and-links/editing-menus)
+
+## Customer accounts
+
+In order to get the app to work as expected, it is required to enable customer accounts for your Shopify Store.
+Shopify gives you the option to set customer accounts as disabled, optional or required.
+Beans requires customer accounts to be set to optional or required.
+Beans support both _Classic customer accounts_ and _New customer accounts_.
+
+Here is how to enable customer accounts with Shopify:
+[Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
