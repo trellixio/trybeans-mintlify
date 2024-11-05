@@ -93,8 +93,10 @@
         "integrations/judgeme",
         "integrations/klaviyo",
         "integrations/twitter",
+        "integrations/beansemail"
         "integrations/bigcommerce"
         "integrations/tokenify"
+
       ]
     }
   ],
