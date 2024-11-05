@@ -64,7 +64,8 @@
         "manage/admin/tiers",
         "manage/admin/history",
         "manage/admin/analytics",
-        "manage/admin/integrations"
+        "manage/admin/integrations",
+        "manage/admin/settings"
       ]
     },
     {
@@ -94,10 +95,11 @@
         "integrations/judgeme",
         "integrations/klaviyo",
         "integrations/twitter",
+        "integrations/api"
+        "integrations/mailchimp"
         "integrations/beansemail"
         "integrations/bigcommerce"
         "integrations/tokenify"
-
       ]
     }
   ],
