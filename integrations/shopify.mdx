@@ -31,6 +31,34 @@ Beans provides a straightforward solution to address this without any negative s
 2. Select **Status** in the integration navigation menu.
 3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
 
+
+## Template Migration
+
+This section is optional and, in most cases, not required.
+
+Template Migration helps the app authenticate customers when they log into your store. By default, the app automatically migrates your templates,
+so no action is needed. However, if you prefer to migrate your template manually, follow the steps below.
+
+If this is your first time editing a Shopify template, please ensure you understand how to do so by reviewing Shopify’s guide:
+[How to Edit Shopify Templates](https://help.shopify.com/en/manual/using-themes/change-the-layout/theme-code)
+
+To manually migrate your template:
+
+Edit the **layout/theme.liquid** file.
+Insert the following code just before the closing tag in the **$</head>$** section.
+
+```yaml
+<script>window.beans_cjs_id = '{{ customer.id }}'; window.beans_cjs_email = '{{ customer.email }}';</script>
+```
+
+<Frame>
+  <img
+    src="/assets/images/integrations/shopify/migration-code.webp"
+    alt="migration code"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
 ## Shopify OS 2.0
 
 If you are using a Shopify Online Store 2.0 theme, it is essential to enable the Beans app in your Shopify theme.
