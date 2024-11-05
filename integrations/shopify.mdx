@@ -8,6 +8,10 @@ icon: 'shopify'
   <img src="/assets/images/integrations/shopify/hero.webp" alt="Shopify" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
+<Note>
+  This guide will help you integrate Beans with Shopify to create a powerful loyalty rewards system for your store. 
+</Note>
+
 Shopify is a leading e-commerce platform that provides
 merchants with the tools they need to sell products online efficiently.
 [Integrating Beans with Shopify](https://www.trybeans.com/integrations/radix:shopify)
@@ -17,10 +21,9 @@ purchases, encouraging repeat business and fostering a loyal customer base.
 
 ## Setup
 
-To begin, install the [Beans app for Shopify](https://apps.shopify.com/beans)
-through the Shopify App Store. Follow the
-[Shopify guideline](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
-on how to install an app through the Shopify App Store.
+1. Install the [Beans app for Shopify](https://apps.shopify.com/beans) through the Shopify App Store
+2. Follow the [Shopify installation guide](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
+3. Once installed, you'll be guided through a simple configuration process to set up your rewards program
 
 ## Reinstall
 
@@ -30,6 +33,115 @@ Beans provides a straightforward solution to address this without any negative s
 1. From the Beans admin dashboard, navigate to the Shopify integration home page.
 2. Select **Status** in the integration navigation menu.
 3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+
+
+## Shopify POS
+
+Currently, Beans does not fully support Shopify POS, but it is on our roadmap. Here is what is already available:
+
+- When a customer completes a purchase, provides their email address, and consents to receive marketing emails, they are
+  automatically enrolled in your rewards program.
+- When a customer is a member of your rewards program or agrees to receive marketing emails during a purchase, they will
+  be credited for the order (assuming a loyalty rule has been set up).
+
+#### Features not supported
+
+Redemption on POS is not yet supported, but you can manually debit points from customers' accounts through the Beans interface.
+Depending on your order volume, you may still want to use Beans with Shopify POS, keeping in mind that the redemption process is not integrated. If you choose to do so, please report any bugs or issues you encounter.
+
+## Shopify Limitations
+
+### Shopify API rate
+
+Shopify uses three different methods for managing rate limits. Different APIs use different methods depending on the use
+case.
+
+The various types of rate limits your apps will encounter are:
+
+- **Request-based limits**: Apps can make a maximum number of requests per minute.
+
+For example, 40 API requests within 60 seconds. Each request counts equally, regardless of how much or how little data is returned. This method is used by the REST Admin API.
+
+- **Time-based limits**: Apps can make requests that take a maximum amount of time per minute.
+
+For example, 120 requests within 60 seconds, with each request taking 0.5 seconds to return. More complex requests take longer and therefore take up a proportionally larger share of the limit. This method is used by the Storefront API.
+
+- **Calculated query costs**: Apps can make requests that cost a maximum number of points per minute.
+
+For example, 1000 points within 60 seconds. More complex requests cost more points and therefore take up a proportionally larger share of the limit. This method is used by the GraphQL API.
+
+Our application communicates with Shopify via their REST API and Shopify limit API calls per second so there is a number of customers that can redeem at the same time.
+
+For example, if your shop has a lot of traffic and many customers try to redeem their points at once, this can lead to a Shopify Rate Limitation making customers unable to redeem their points. To solve this they simply have to wait and try again a few minutes later.
+
+To read more about Shopify API Rate Limitation, click [here.](https://shopify.dev/docs/api/usage/rate-limits)
+
+## Using Discount Codes with Points Redemption on Shopify
+
+Beans rewards program applies points redemptions using discount codes. When a customer redeems their points, a discount
+code is automatically generated and applied to their cart.
+
+#### Shopify (Classic)
+
+If you are using the classic version of Shopify (not using Shopify Plus), customers are restricted to using only one discount
+code at checkout. This means if a customer wishes to redeem their points, they cannot simultaneously apply another discount code.
+
+#### Shopify Plus
+
+Shopify Plus merchants have the option to allow multiple discount codes at checkout. However, enabling this feature
+requires contacting Shopify to activate it specifically for your store. Merchants considering this should be aware of the potential
+complexities:
+
+- **Mutually Exclusive Discounts**: Even when multiple discounts are technically allowed, certain codes might not be compatible with one another. For
+  example, one code might offer a percentage off the total cart value, which could conflict with a fixed amount off provided by the
+  points redemption.
+
+- **Custom Redemption Rules**: If you have set specific conditions for using points, such as minimum cart values or certain items being
+  exempt from discounts, these rules might conflict with other active discount codes.
+
+## Shopify Customer Tags
+
+Tagging Customers with VIP Tier Levels
+
+<Tip>This feature is activated by default when you enable the tier feature and have connected your Shopify store.</Tip>
+
+The Tiers feature allows you to create membership levels where customers can enjoy different loyalty benefits based on their tier.
+As members meet the conditions for each tier, their status is automatically updated, promoting or demoting them as appropriate.
+
+Beans automatically tags customers in Shopify with their current tier level. This makes it easy to see which tier a customer belongs
+to directly within the Shopify dashboard. It also simplifies customer segmentation by tier. For example, when a customer joins the
+Gold tier, a tag like Beans-Tier-Gold will be added to their profile in Shopify.
+
+<Frame>
+  <img src="/assets/images/integrations/shopify/customer-tag.webp" alt="Shopify" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+## Template Migration
+
+This section is optional and, in most cases, not required.
+
+Template Migration helps the app authenticate customers when they log into your store. By default, the app automatically migrates your templates,
+so no action is needed. However, if you prefer to migrate your template manually, follow the steps below.
+
+If this is your first time editing a Shopify template, please ensure you understand how to do so by reviewing Shopify’s guide:
+[How to Edit Shopify Templates](https://help.shopify.com/en/manual/using-themes/change-the-layout/theme-code)
+
+To manually migrate your template:
+
+Edit the **layout/theme.liquid** file.
+Insert the following code just before the closing tag in the **$</head>$** section.
+
+```yaml
+<script>window.beans_cjs_id = '{{ customer.id }}'; window.beans_cjs_email = '{{ customer.email }}';</script>
+```
+
+<Frame>
+  <img
+    src="/assets/images/integrations/shopify/migration-code.webp"
+    alt="migration code"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
 
 ## Shopify OS 2.0
 
