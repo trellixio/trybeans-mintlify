@@ -63,6 +63,137 @@ Beans provides a straightforward solution to address this without any negative s
 2. Select **Status** in the integration navigation menu.
 3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
 
+## Connection Issues
+
+How to Fix Connection Problems When Connecting Your Store to Beans
+
+The Beans plugin uses the WooCommerce API to deliver services that help you sell more. However, when connecting our
+application to your store, we perform checks to ensure all required configurations are functioning properly.
+
+## Case HTTP Status: 200, 401
+
+If you receive a 401 HTTP status and your website is password-protected, or if you're using a “coming soon” or “site
+under construction” plugin that restricts public access, this will also block API access, which is essential for our
+application. To resolve this:
+
+Temporarily disable the plugin to allow connection, then reactivate it afterward.
+For example, if your store link is [https://www.example.com](https://www.example.com), follow these steps:
+
+1. Go to [https://www.example.com/wc-auth/v1/authorize/](https://www.example.com/wc-auth/v1/authorize/) and verify that you see a page similar to the image below.
+
+<Frame>
+  <img src="/assets/images/integrations/woocommerce/error-1.webp" alt="Reinstall" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+2. Go to [https://www.example.com/wp-json/wc/v2/](https://www.example.com/wp-json/wc/v2/) and confirm the page looks like the example provided.
+
+<Frame>
+  <img src="/assets/images/integrations/woocommerce/wp-json.webp" alt="Reinstall" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+3. Now, use the following link to connect:
+   [https://www.example.com/wp-admin/admin.php?page=beans-woo&force_beans=1](https://www.example.com/wp-admin/admin.php?page=beans-woo&force_beans=1)
+   Replace [https://www.example.com](https://www.example.com) with your actual domain name and follow the normal process.
+
+## Case HTTP Status: 0
+
+If you encounter a status 0 during configuration checks, it indicates an issue occurred while attempting to connect to your store. This usually happens when your SSL certificate is invalid. Renew your SSL certificate and try again.
+
+## Case HTTP Status: 404
+
+For more details on resolving a 404 error, refer to the following article:
+Connecting Beans Application to WooCommerce Stores
+
+Other Cases
+Here are some additional common issues and solutions:
+
+- **Outdated WooCommerce Version**: If your store is using WooCommerce version 3.9 or older, update to the latest version
+  before installing the Beans plugin.
+- **Incorrect WordPress Installation Location**: WordPress must be installed at the domain or subdomain level, not at the
+  page level. For example, if you're developing a store at `www.example.com/dev/`, our server will attempt to connect
+  to `www.example.com`. To avoid this issue, install the development store on a subdomain like the `dev.example.com`
+- **Caching Plugin Issues**: If you have a caching plugin that strips the "Authorization" header, try disabling plugins one
+  by one to identify the culprit.
+
+If you’ve tried all of the above and the issue persists, it may be due to your server stripping the "Authorization"
+header. As this relates to web server configuration and third-party WordPress plugins, Beans cannot provide support for
+this issue. However, you can try the following:
+
+<Warning>
+  Since this issue relates to the configuration of your web server and other WordPress plugins, Beans cannot provide
+  support in these cases. You can try the suggestions below, but please consult a web developer before making any
+  configuration changes.
+</Warning>
+
+Add the following line to your `.htaccess` file:
+
+`SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1`
+
+If this does not resolve the issue, review your caching plugin's settings to ensure headers are not being cached or
+stripped.
+
+If you are still experiencing issues, please contact your hosting provider for further assistance.
+## Edit Beans Pages
+
+Adding Information to the Rewards Program Page
+
+The Beans plugin for WooCommerce automatically creates a rewards page for your shop, typically accessible
+at `http://myshop.com/rewards-program` (based on your website's full URL).
+
+The page is powered by the Beans shortcode `[beans_page] `, allowing you to easily add additional content without removing the shortcode.
+
+To edit the page and add i+nformation:
+
+1. From your WordPress dashboard, go to **Pages > All Pages** in the left-hand menu.
+2. Find the **Reward Page** and click **Edit**.
+3. In the text editor, insert your additional content, ensuring you keep the shortcode `[beans_page]` intact.
+4. Click Update to save your changes.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/woocommerce/edit-beans-page.gif"
+
+## Setting Up Permalinks
+
+In some cases, you may encounter difficulties connecting our plugin to your store, often due to issues with your
+**permalinks configuration**.
+
+If you are seeing a 404 status error, it means the application is unable to locate certain URLs in your shop. To resolve
+this issue:
+
+1. Log in to your WordPress dashboard.
+2. Navigate to **Settings** and click on **Permalinks**.
+3. Under the **Common Settings** section, select **Post name**.
+4. Scroll down and click the **Save Changes** button.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/woocommerce/permalinks.gif"
+    alt="Reinstall"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+If your rewards page is not in the menu, take the opportunity to add a link to it, so that customers can easily access it.
+If the issue persists, please [contact](https://www.trybeans.com/contact) our support team.
+
+## Referencing WooCommerce Pages
+
+Adding a Program Link to Your Store’s Navigation Menu.
+
+WordPress provides a drag-and-drop menu interface that allows you to easily configure the navigation menu for your website.
+
+Your website can feature multiple menus, such as:
+
+- The **Main menu** at the top, which gives customers quick access to important pages like collections.
+- The **Footer menu** at the bottom, providing links to additional pages like "About Us."
+  For easier access, we recommend adding the link to your loyalty program in the Main menu, making it convenient for customers
+  to find and engage with the program.
+
+Here is a guide:
+
+https://www.wpbeginner.com/beginners-guide/how-to-add-navigation-menu-in-wordpress-beginners-guide/
+
 ## Rewards page
 
 The Beans plugin for WooCommerce automatically adds a rewards page to your shop.
