@@ -85,3 +85,61 @@ this issue:
 </Frame>
 
 If the issue persists, please [contact](https://www.trybeans.com/contact) our support team.
+
+## Referencing WooCommerce Pages
+
+Adding a Program Link to Your Store’s Navigation Menu.
+
+WordPress provides a drag-and-drop menu interface that allows you to easily configure the navigation menu for your website.
+
+Your website can feature multiple menus, such as:
+
+- The **Main menu** at the top, which gives customers quick access to important pages like collections.
+- The **Footer menu** at the bottom, providing links to additional pages like "About Us."
+  For easier access, we recommend adding the link to your loyalty program in the Main menu, making it convenient for customers
+  to find and engage with the program.
+
+Here is a guide:
+
+https://www.wpbeginner.com/beginners-guide/how-to-add-navigation-menu-in-wordpress-beginners-guide/
+
+## Rewards page
+
+The Beans plugin for WooCommerce automatically adds a rewards page to your shop.
+By default, you can access the page at `http://myshop.com/rewards-program`, assuming
+your website's full URL is `https://myshop.com`.
+
+To display the rewards program page, Beans uses the shortcode `[beans_page]`.
+This makes it very easy to edit the page if necessary.
+
+It is recommended to add the link to your rewards program in the main menu to make it easy for your customers to access.
+Here is how to do it: [How to Add Navigation Menu in WordPress](https://www.wpbeginner.com/beginners-guide/how-to-add-navigation-menu-in-wordpress-beginners-guide/)
+
+## Caching
+
+Many WordPress websites use caching to improve performance for visitors.
+While caching can enhance website speed and traffic, it can be difficult to debug, especially for dynamic websites.
+
+In most cases, it is recommended **not** to cache dynamic pages because cached versions
+may become outdated or inaccurate. There are two types of pages on a website: static and dynamic.
+A static page has unchanging content, whereas dynamic pages frequently update and are not suitable for caching.
+
+We recommend excluding the rewards program page and the referral program page from your caching system
+because they are dynamic and do not display the same content for each customer.
+
+### WP Rocket
+
+Follow these step-by-step instructions to configure exclusions with WP Rocket:
+
+1. Navigate to the **File Optimization** section in WP Rocket.
+2. Uncheck all checkboxes in the **JavaScript Files** section and save your changes.
+3. Go to the **Advanced Rules** option and add the following lines to the **Never Cache URLs** section:
+
+   ```txt
+   /rewards-program/(.)
+   /referral-program/(.)
+   /my-account/(.*)
+   ```
+
+4. Save your settings.
+5. Clear your cache and visit the program pages in your store.
