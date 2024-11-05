@@ -8,6 +8,10 @@ icon: 'shopify'
   <img src="/assets/images/integrations/shopify/hero.webp" alt="Shopify" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
+<Note>
+  This guide will help you integrate Beans with Shopify to create a powerful loyalty rewards system for your store. 
+</Note>
+
 Shopify is a leading e-commerce platform that provides
 merchants with the tools they need to sell products online efficiently.
 [Integrating Beans with Shopify](https://www.trybeans.com/integrations/radix:shopify)
@@ -17,10 +21,9 @@ purchases, encouraging repeat business and fostering a loyal customer base.
 
 ## Setup
 
-To begin, install the [Beans app for Shopify](https://apps.shopify.com/beans)
-through the Shopify App Store. Follow the
-[Shopify guideline](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
-on how to install an app through the Shopify App Store.
+1. Install the [Beans app for Shopify](https://apps.shopify.com/beans) through the Shopify App Store
+2. Follow the [Shopify installation guide](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
+3. Once installed, you'll be guided through a simple configuration process to set up your rewards program
 
 ## Reinstall
 
@@ -30,6 +33,30 @@ Beans provides a straightforward solution to address this without any negative s
 1. From the Beans admin dashboard, navigate to the Shopify integration home page.
 2. Select **Status** in the integration navigation menu.
 3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+
+
+## Using Discount Codes with Points Redemption on Shopify
+
+Beans rewards program applies points redemptions using discount codes. When a customer redeems their points, a discount
+code is automatically generated and applied to their cart.
+
+#### Shopify (Classic)
+
+If you are using the classic version of Shopify (not using Shopify Plus), customers are restricted to using only one discount
+code at checkout. This means if a customer wishes to redeem their points, they cannot simultaneously apply another discount code.
+
+#### Shopify Plus
+
+Shopify Plus merchants have the option to allow multiple discount codes at checkout. However, enabling this feature
+requires contacting Shopify to activate it specifically for your store. Merchants considering this should be aware of the potential
+complexities:
+
+- **Mutually Exclusive Discounts**: Even when multiple discounts are technically allowed, certain codes might not be compatible with one another. For
+  example, one code might offer a percentage off the total cart value, which could conflict with a fixed amount off provided by the
+  points redemption.
+
+- **Custom Redemption Rules**: If you have set specific conditions for using points, such as minimum cart values or certain items being
+  exempt from discounts, these rules might conflict with other active discount codes.
 
 
 ## Template Migration
