@@ -94,11 +94,11 @@
         "integrations/judgeme",
         "integrations/klaviyo",
         "integrations/twitter",
+        "integrations/api"
         "integrations/mailchimp"
         "integrations/beansemail"
         "integrations/bigcommerce"
         "integrations/tokenify"
-
       ]
     }
   ],
