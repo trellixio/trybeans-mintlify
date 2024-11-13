@@ -64,7 +64,8 @@
         "manage/admin/tiers",
         "manage/admin/history",
         "manage/admin/analytics",
-        "manage/admin/integrations"
+        "manage/admin/integrations",
+        "manage/admin/settings"
       ]
     },
     {
