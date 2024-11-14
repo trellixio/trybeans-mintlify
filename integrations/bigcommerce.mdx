@@ -16,22 +16,24 @@ icon: 'B'
 BigCommerce is an e-commerce platform designed to provide merchants with the tools
 they need to sell products online effectively.
 [Integrating Beans with BigCommerce](https://www.trybeans.com/integrations/trellis:bigcommerce)
-enhances this functionality by enabling merchants to implement a rewards system that
-promotes customer loyalty. With Beans for BigCommerce, merchants can reward customers
-for purchases, encourage repeat business, and develop a loyal customer base.
+enhances this functionality by enabling merchants to implement a rewards system that promotes customer loyalty. With Beans for BigCommerce, you can reward customers for their purchases, encouraging repeat business and fostering a loyal customer base.
 
 ## Setup
 
-1. From the Beans admin, go to **Integrations**.
-2. Locate **BigCommerce** in the list of available integrations.
-3. Click on the connect button and proceed as directed.
-4. You will need to provide a **BigCommerce API key**.
-5. On the BigCommerce Admin panel, go to settings> API > Store-level API account
-6. Click **Create API account**
-7. Name the key, Grant full Access to all permission and select
-   **Save** to generate and copy the API key.
-8. Copy and paste the API key into the Beans interface form field.
-9. Click **Connect** to complete the process.
+1. Navigate to the Beans admin dashboard and select **Integrations**.
+2. Find and click on **BigCommerce** from the integrations list.
+3. Click **Connect** to begin the integration process.
+4. You'll need to generate BigCommerce API credentials. To do this:
+   - Log in to your BigCommerce admin panel
+   - Go to **Settings** > **API** > **Store-level API Accounts**
+   - Click **Create API Account**
+   - Enter a name for your API account (e.g., "Beans Integration")
+   - Under **OAuth Scopes**, ensure all permissions are set to "Full"
+   - Click **Save** to generate the API credentials
+5. You'll receive three pieces of information that need to be copied to Beans: **Client ID**, **Client secret**, and **Access token**.
+6. Copy your **BigCommerce API path or Store URL** (it should look like: `https://api.bigcommerce.com/stores/xxxxxxxx/v3/`)
+7. Paste all four credentials into their respective fields in the Beans interface.
+8. Click **Connect** to finalize the integration.
 
 <Frame>
   <img
@@ -45,24 +47,22 @@ for purchases, encourage repeat business, and develop a loyal customer base.
 
 If you suspect the Beans plugin is not properly installed on your BigCommerce site, Beans
 provides a straightforward solution to address this without any negative side effects.
-
-1. From the Beans admin, go to **Integrations**.
-2. Locate **BigCommerce** in the list of available integrations.
-3. Select **Status** in the integration navigation menu.
-4. From the **Actions** dropdown on the top right, click **Reinstall Beans**.
-
-   <Frame>
-     <img
+  
+<Frame>
+  <img
        src="/assets/images/integrations/bigcommerce/Reinstall.gif"
        alt="order log"
        style={{ borderRadius: '0.5rem' }}
      />
    </Frame>
 
+1. From the Beans admin dashboard, navigate to the BigCommerce integration home page.
+2. Select **Status** in the integration navigation menu.
+3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+
+
 ## Rewards page
 
-The BigCommerce navigation tool let you dynamically set up a navigation menu for your website.
-We recommend adding the link to the rewards program in the Main menu(Parent page) in order to
-make it easy for your customers to access.
-Here is how to do it:
-[Navigation Menu Options](https://support.bigcommerce.com/s/article/Web-Pages?language=en_US#navigation)
+Beans automatically adds a rewards page to your shop. By default, you can access the page at `https://example.mybigcommerce.com/rewards`, assuming your website’s full URL is `https://example.mybigcommerce.com`.
+
+To improve the visibility of your rewards program and make it easier for customers to find, we suggest adding a link to the rewards page in your main menu. Here's an article on how to do it: [BigCommerce - Navigation Menu Options](https://support.bigcommerce.com/s/article/Web-Pages?language=en_US#navigation).
