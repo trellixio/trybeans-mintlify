@@ -103,3 +103,30 @@ Follow these step-by-step instructions to configure exclusions with WP Rocket:
 
 4. Save your settings.
 5. Clear your cache and visit the program pages in your store.
+
+## Troubleshooting
+
+### Issues with connecting Beans
+
+Beans uses the WooCommerce API to access your store data. Here are the most common reasons why you might experience
+issues with connecting Beans to your store.
+
+- **Password-protected store**: To connect Beans to your store,
+  you might need to temporarily disable password protection for your store.
+- **"coming soon" or "site under construction" plugin that restricts public access**:
+  This will block API access, which is essential for our application.
+  To resolve this, temporarily disable the plugin to allow connection, then reactivate it afterward.
+- **Incorrect API keys**: Please double-check your API keys to ensure they are correct.
+- **Invalid SSL certificate**: Beans use SSL to securely connect to your store.
+  If your SSL certificate is invalid, you might need to renew it.
+- **Cache plugin**: If you have a cache management plugin that strips the "Authorization" header,
+  try disabling the plugin to see if it resolves the issue.
+- **Incorrect permalinks**: Ensure that your
+  [WordPress permalinks](https://wordpress.org/documentation/article/customize-permalinks/#pretty-permalinks)
+  are set to a pretty permalink structure. The recommended setting is `/%postname%/`.
+- **Outdated WordPress or WooCommerce version**: Update your WordPress and WooCommerce to the latest versions.
+- **Localhost**: If you're using localhost, you need to install Beans on a live server
+  or use a localtunnel URL such as [ngrok](https://ngrok.com/) to connect to your store.
+- **Invalid WordPress site location**: WordPress must be installed at the root level of your domain or subdomain.
+  For example, if you're developing a store at `www.example.com/dev/`, our server will attempt to connect
+  to `www.example.com`. To avoid this issue, install the development store on a subdomain like the `dev.example.com`

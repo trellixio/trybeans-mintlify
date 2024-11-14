@@ -80,7 +80,8 @@
         "manage/rules/invitation",
         "manage/rules/social",
         "manage/rules/review",
-        "manage/rules/expiration"
+        "manage/rules/expiration",
+        "manage/rules/celebration"
       ]
     },
     {
@@ -93,8 +94,8 @@
         "integrations/judgeme",
         "integrations/klaviyo",
         "integrations/twitter",
+        "integrations/tokenify",
         "integrations/bigcommerce"
-        "integrations/tokenify"
       ]
     }
   ],

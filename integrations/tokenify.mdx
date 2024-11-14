@@ -1,10 +1,10 @@
 ---
-title: 'Tokenify'
-description: 'Manage and utilize your Beans API authentication tokens.'
+title: 'API Tokens'
+description: 'Generate and manage API authentication credentials.'
 icon: 'square-code'
 ---
 
-<Frame caption="tokenify">
+<Frame caption="Beans API Tokens">
   <img
     src="/assets/images/integrations/tokenify/hero.webp"
     style={{ borderRadius: '0.5rem' }}
@@ -13,21 +13,25 @@ icon: 'square-code'
   />
 </Frame>
 
-Tokenify is a powerful Beans integration that streamlines API authentication, empowering merchants to access their data
-effortlessly via the Beans API. This innovative solution generates unique API authentication credentials, perfect for
-merchants seeking to:
+Beans API Tokens is a utility that lets merchants generate and manage API authentication credentials.
+It's designed to help merchants:
 
-1. Create customized tasks tailored to their specific needs.
-2. Leverage their Beans data for personalized insights and automation.
+- Integrate Beans with their existing tech stack
+- Create custom business logic with Beans data
+- Access Beans data through the Beans API for analytics and automation
 
 <Warning>
-  The API keys provided by Tokenify are exclusively designed for individual merchants, enabling them to access their
-  data. They are not intended for partners developing integrations for multiple merchants. This ensures each merchant's
-  secure and personalized experience, safeguarding their sensitive data.
+  The API tokens provided by this integration are designed for individual merchants use, enabling them to access their
+  data. They are not intended for partners developing integrations for multiple merchants.
 </Warning>
 
-Merchants receive a unique set of API tokens, comprising a public identifier and a secret
-token, to secure access to their data.
+## How it works
+
+Once activated Merchants receive a unique set of API tokens, comprising a public identifier and a secret token.
+Public identifier can be used to access non-sensitive data from the storefront
+or any other place where security is not a concern. Secret token should be used server-side for accessing Beans API
+endpoints that require authentication. To learn more about how to use the API, please refer to the
+[API documentation](https://api.trybeans.com/v3/doc).
 
 <Frame caption="credentials">
   <img
@@ -38,40 +42,10 @@ token, to secure access to their data.
   />
 </Frame>
 
-## How it Works
+## Example
 
-Tokenify provides a secure authentication system through API tokens. When you enable Tokenify, you'll receive:
+Here is an example of how to use the API to access Beans data.
 
-1. A Merchant Account Identifier - Your unique account reference
-2. A Public ID - Used to identify your account in API requests
-3. A Secret Token - Your private key for secure authentication
-
-These tokens work together to authenticate and authorize your API requests, ensuring only your authorized applications can access your merchant data.
-
-## Important Details
-
-<AccordionGroup>
-  <Accordion title="Merchant Account Identifier">
-    A unique identifier assigned to your Beans merchant account. This ID helps verify your account ownership and is used for internal reference.
-
-```yaml
-$exampleshop
+```bash
+curl -u "<public-identifier>:" -X GET "https://api.trybeans.com/v3/ultimate/card/current/"
 ```
-  </Accordion>
-
-  <Accordion title="Merchant Public ID">
-    A publicly visible identifier used in your API calls. This ID can be safely shared and helps route your requests to the correct account.
-
-```yaml
-card_Opt14xxx
-```
-  </Accordion>
-
-  <Accordion title="Merchant Secret Token">
-    A private authentication token that should be kept secure. Never share this token or commit it to version control.
-
-```yaml
-sk_0xxxxxxxxxxxxxxxxxxxxxxxxxxxx9999
-```
-  </Accordion>
-</AccordionGroup>
