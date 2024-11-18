@@ -4,65 +4,84 @@ description: 'Integrate Beans with your BigCommerce Store.'
 icon: 'B'
 ---
 
-<Frame>
-  <img
-    src="/assets/images/integrations/bigcommerce/hero.webp"
-    alt="Bigcommerce"
-    title="Bigcommerce"
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
+## Redemption
 
-BigCommerce is an e-commerce platform designed to provide merchants with the tools
-they need to sell products online effectively.
-[Integrating Beans with BigCommerce](https://www.trybeans.com/integrations/trellis:bigcommerce)
-enhances this functionality by enabling merchants to implement a rewards system that promotes customer loyalty. With Beans for BigCommerce, you can reward customers for their purchases, encouraging repeat business and fostering a loyal customer base.
+### Minimum Points Required for Redemption
 
-## Setup
+To redeem points, customers must have at least a specified minimum amount in their account.
+Setting a minimum points threshold ensures that customers accumulate enough points before
+they can redeem them.
 
-1. Navigate to the Beans admin dashboard and select **Integrations**.
-2. Find and click on **BigCommerce** from the integrations list.
-3. Click **Connect** to begin the integration process.
-4. You'll need to generate BigCommerce API credentials. To do this:
-   - Log in to your BigCommerce admin panel
-   - Go to **Settings** > **API** > **Store-level API Accounts**
-   - Click **Create API Account**
-   - Enter a name for your API account (e.g., "Beans Integration")
-   - Under **OAuth Scopes**, ensure all permissions are set to "Full"
-   - Click **Save** to generate the API credentials
-5. You'll receive three pieces of information that need to be copied to Beans: **Client ID**, **Client secret**, and **Access token**.
-6. Copy your **BigCommerce API path or Store URL** (it should look like: `https://api.bigcommerce.com/stores/xxxxxxxx/v3/`)
-7. Paste all four credentials into their respective fields in the Beans interface.
-8. Click **Connect** to finalize the integration.
+It's important to set the minimum points level in a way that aligns with both your business
+objectives and customer expectations.
 
-<Frame>
-  <img
-    src="/assets/images/integrations/bigcommerce/setup.gif"
-    alt="Setup bigcommerce"
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
+**Example**
 
-## Reinstall
+If the minimum points required for redemption is set to 100, customers will need at least
+100 points in their account to redeem rewards.
 
-If you suspect the Beans plugin is not properly installed on your BigCommerce site, Beans
-provides a straightforward solution to address this without any negative side effects.
-  
-<Frame>
-  <img
-       src="/assets/images/integrations/bigcommerce/Reinstall.gif"
-       alt="order log"
-       style={{ borderRadius: '0.5rem' }}
-     />
-   </Frame>
+### Maximum Discount per Redemption
 
-1. From the Beans admin dashboard, navigate to the BigCommerce integration home page.
-2. Select **Status** in the integration navigation menu.
-3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+The maximum discount per redemption sets a limit on how much of the total purchase price
+can be discounted through points. This ensures that the discounts provided through redemptions
+remain within acceptable limits for your business.
 
+**Examples**
 
-## Rewards page
+If a customer is purchasing a product worth $10 and has 1000 points (equivalent to $10) and
+the maximum discount is set to 50%, they will be able to redeem only 500 points, resulting in
+a $5 discount.
 
-Beans automatically adds a rewards page to your shop. By default, you can access the page at `https://example.mybigcommerce.com/rewards`, assuming your website’s full URL is `https://example.mybigcommerce.com`.
+### Eligible Collections
 
-To improve the visibility of your rewards program and make it easier for customers to find, we suggest adding a link to the rewards page in your main menu. Here's an article on how to do it: [BigCommerce - Navigation Menu Options](https://support.bigcommerce.com/s/article/Web-Pages?language=en_US#navigation).
+Enable point redemption for specific product collections in your store.
+
+Beans allows you to designate certain product collections where customers can redeem points
+for discounts. By selecting "Eligible Collections," you can promote specific products or
+collections within the rewards program, encouraging customer purchases.
+
+Using the Beans admin interface, you can configure which product collections qualify for
+point redemption. Once set, customers can redeem points for discounts on items within these
+collections.
+
+**Steps to set up Eligible Collections**
+
+1. From the Beans admin dashboard, go to your BigCommerce Integrations home page.
+2. Select Preference in the integration menu.
+3. Locate the Eligible Collections section.
+4. Choose the product collections that will allow point redemption.
+5. Click Save to confirm.
+
+Only published products with valid pricing will be available for selection.
+
+### Non-Eligible Collections
+
+Restrict point redemption for specific products in your store.
+
+While Beans allows customers to redeem points for discounts on most purchases, you may want to
+exclude certain products from your rewards program. The "Non-Eligible Collections" feature lets
+you prevent point redemption for selected items, which can be useful for premium products,
+new releases, or specific collections you want to exempt from discounts.
+
+Through the Beans admin interface, you can choose which product collections will be excluded
+from point redemption. Once these non-eligible collections are set, customers cannot redeem
+points for products in those collections, even if they are members of your rewards program.
+
+**Steps to set up Non-Eligible Collections**
+
+1. From the Beans admin dashboard, navigate to your BigCommmerce Integrations home page.
+2. Select **Preference** in the integration navigation menu.
+3. Find the **Non-Eligible Collections** section.
+4. Choose the collection of products that will be excluded from point redemption.
+5. When finished, click the **Save** button.
+
+Only products that have been published in your store and have a valid price will be available for selection.
+
+### Advance
+
+**Auto Registration for Rewards Programs**
+
+The Auto Registration feature automates the process of enrolling new customers into a rewards
+program. By automatically adding customers when they create an account or complete a purchase,
+this integrates customers seamlessly into the program, and maximizes participation by ensuring
+no customers are excluded from the outset.
