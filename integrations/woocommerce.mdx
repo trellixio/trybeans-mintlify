@@ -4,129 +4,76 @@ description: 'Integrate Beans with your WooCommerce store.'
 icon: 'wordpress'
 ---
 
-<Frame>
-  <img src="/assets/images/integrations/woocommerce/hero.webp" alt="WooCommerce" style={{ borderRadius: '0.5rem' }} />
-</Frame>
+## Redemption
 
-WooCommerce is an open-source e-commerce platform designed to provide merchants
-with the tools they need to sell products online effectively.
-[Integrating Beans with WooCommerce](https://www.trybeans.com/integrations/radix:woocommerce)
-enhances this experience by enabling merchants
-to boost customer loyalty through a rewards system. With Beans for WooCommerce,
-you can reward customers for their purchases,
-encouraging repeat business and fostering a loyal customer base.
+### Minimum Points Requirement for Redemption
 
-## Setup
+The minimum points requirement establishes a threshold that customers must meet in their
+accounts to qualify for point redemption. This threshold ensures that points are sufficiently
+accumulated before redemption, promoting meaningful engagement with the rewards program.
 
-To begin, install the [Beans plugin for WooCommerce](https://wordpress.org/plugins/beans-woocommerce-loyalty-rewards/)
-from the WordPress plugin repository. Follow the
-[WordPress guideline](https://wordpress.org/documentation/article/manage-plugins/) for plugin installation.
-After installation, activate the plugin and connect Beans to your shop using the setup instructions.
+**Example**
 
-To manually connect Beans to your WooCommerce store, follow these steps:
+If the minimum points required for redemption is set to 100, customers will need at least 100
+points in their account to redeem rewards.
 
-<Frame>
-  <img
-    src="/assets/images/integrations/woocommerce/install-manual.gif"
-    alt="Manual install"
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
+### Maximum Discount per Redemption
 
-1. Navigate to the plugins management page in your WordPress admin.
-2. Find **Beans** and select **settings**.
-3. On the Beans admin page within WordPress, follow the prompts and click **Connect**.
-4. Select your Beans account or create a new one. If you already have one, log in.
-5. Once on the connect page, choose **Connect manually**.
-6. Provide WooCommerce API keys as instructed.
-7. In WordPress admin, go to **WooCommerce > Settings > Advanced > REST API**.
-8. Select **Add key** to create a new key for Beans.
-9. Fill out the form: name the key, choose the primary admin as the user, and set permissions to **Read/Write**.
-10. Generate and copy the API Key.
-11. Paste the keys into the Beans interface form field.
-12. Click **Connect** to complete the process.
+The maximum discount per redemption defines the upper limit of the purchase price that can be
+offset using points. This parameter ensures that point-based discounts remain within predefined boundaries.
 
-## Reinstall
+**Examples**
 
-If you suspect the Beans plugin isn't properly installed on your WordPress site,
-Beans provides a straightforward solution to address this without any negative side effects.
+If a customer is purchasing a product worth `$10` and has 1000 points (equivalent to `$10`)
+and the maximum discount is set to 50%, they will be able to redeem
+only 500 points, resulting in a `$5` discount.
 
-<Frame>
-  <img
-    src="/assets/images/integrations/woocommerce/actions-reinstall.gif"
-    alt="Reinstall"
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
+### Subscription Redemption
 
-1. From the Beans admin dashboard, navigate to the WooCommerce integration home page.
-2. Select **Status** in the integration navigation menu.
-3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+In order to allow customers to offset the cost of their subscription renewals, the subscription
+redemption feature enables them to apply earned points directly to their payments. This
+functionality helps to enhance the perceived value of your reward program.
 
-## Rewards page
+### Role Exclusion
 
-The Beans plugin for WooCommerce automatically adds a rewards page to your shop.
-By default, you can access the page at `http://myshop.com/rewards-program`, assuming
-your website's full URL is `https://myshop.com`.
+The Role Exclusion feature allows you to define specific WordPress user roles that should be
+excluded from earning rewards in the program. Any user assigned to these roles will not
+accumulate rewards for their purchases.
 
-To display the rewards program page, Beans uses the shortcode `[beans_page]`.
-This makes it very easy to edit the page if necessary.
+When specifying roles in this field, it is important to note that it is case-sensitive. Ensure
+you enter the role names exactly as they appear in your WordPress settings to avoid any
+discrepancies.
 
-It is recommended to add the link to your rewards program in the main menu to make it easy for your customers to access.
-Here is how to do it: [How to Add Navigation Menu in WordPress](https://www.wpbeginner.com/beginners-guide/how-to-add-navigation-menu-in-wordpress-beginners-guide/)
+### Eligible Collections
 
-## Caching
+Use this option to specify collections eligible for points redemption. By selecting specific
+collections, you can restrict redemptions to those collections only.
 
-Many WordPress websites use caching to improve performance for visitors.
-While caching can enhance website speed and traffic, it can be difficult to debug, especially for dynamic websites.
+If no collections are selected, redemption will be allowed on all collections by default.
 
-In most cases, it is recommended **not** to cache dynamic pages because cached versions
-may become outdated or inaccurate. There are two types of pages on a website: static and dynamic.
-A static page has unchanging content, whereas dynamic pages frequently update and are not suitable for caching.
+### Display
 
-We recommend excluding the rewards program page and the referral program page from your caching system
-because they are dynamic and do not display the same content for each customer.
+**Redemption on Checkout**
 
-### WP Rocket
+Enable this option to show the redemption button on the checkout page, allowing customers to
+redeem points directly during their purchase.
 
-Follow these step-by-step instructions to configure exclusions with WP Rocket:
+**Product Points**
 
-1. Navigate to the **File Optimization** section in WP Rocket.
-2. Uncheck all checkboxes in the **JavaScript Files** section and save your changes.
-3. Go to the **Advanced Rules** option and add the following lines to the **Never Cache URLs** section:
+Activate this setting to display points information on individual product pages, helping
+customers understand how many points they can earn or redeem for specific products.
 
-   ```txt
-   /rewards-program/(.)
-   /referral-program/(.)
-   /my-account/(.*)
-   ```
+**Cart Notices**
 
-4. Save your settings.
-5. Clear your cache and visit the program pages in your store.
+Show customers their points balance with a notification on the cart page by enabling this
+option. This keeps them informed about their rewards during checkout.
 
-## Troubleshooting
+**Beans Watermark**
 
-### Issues with connecting Beans
+Disable this option to remove the "Powered by Beans" watermark from the footer of the rewards
+program page, ensuring a more branded appearance for your store.
 
-Beans uses the WooCommerce API to access your store data. Here are the most common reasons why you might experience
-issues with connecting Beans to your store.
+**Auto Registration**
 
-- **Password-protected store**: To connect Beans to your store,
-  you might need to temporarily disable password protection for your store.
-- **"coming soon" or "site under construction" plugin that restricts public access**:
-  This will block API access, which is essential for our application.
-  To resolve this, temporarily disable the plugin to allow connection, then reactivate it afterward.
-- **Incorrect API keys**: Please double-check your API keys to ensure they are correct.
-- **Invalid SSL certificate**: Beans use SSL to securely connect to your store.
-  If your SSL certificate is invalid, you might need to renew it.
-- **Cache plugin**: If you have a cache management plugin that strips the "Authorization" header,
-  try disabling the plugin to see if it resolves the issue.
-- **Incorrect permalinks**: Ensure that your
-  [WordPress permalinks](https://wordpress.org/documentation/article/customize-permalinks/#pretty-permalinks)
-  are set to a pretty permalink structure. The recommended setting is `/%postname%/`.
-- **Outdated WordPress or WooCommerce version**: Update your WordPress and WooCommerce to the latest versions.
-- **Localhost**: If you're using localhost, you need to install Beans on a live server
-  or use a localtunnel URL such as [ngrok](https://ngrok.com/) to connect to your store.
-- **Invalid WordPress site location**: WordPress must be installed at the root level of your domain or subdomain.
-  For example, if you're developing a store at `www.example.com/dev/`, our server will attempt to connect
-  to `www.example.com`. To avoid this issue, install the development store on a subdomain like the `dev.example.com`
+Turn this setting on to automatically enroll new customers in the rewards program, simplifying
+the registration process and encouraging engagement.
