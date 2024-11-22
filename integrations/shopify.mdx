@@ -4,67 +4,37 @@ description: 'Integrate Beans with your Shopify store.'
 icon: 'shopify'
 ---
 
-<Frame>
-  <img src="/assets/images/integrations/shopify/hero.webp" alt="Shopify" style={{ borderRadius: '0.5rem' }} />
-</Frame>
+## Uninstallation
 
-Shopify is a leading e-commerce platform that provides
-merchants with the tools they need to sell products online efficiently.
-[Integrating Beans with Shopify](https://www.trybeans.com/integrations/radix:shopify)
-enhances this experience by enabling merchants to boost
-customer loyalty through a rewards system. With Beans for Shopify, you can reward customers for their
-purchases, encouraging repeat business and fostering a loyal customer base.
+Steps to uninstall the Beans application from Your Shopify store.
 
-## Setup
-
-To begin, install the [Beans app for Shopify](https://apps.shopify.com/beans)
-through the Shopify App Store. Follow the
-[Shopify guideline](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
-on how to install an app through the Shopify App Store.
-
-## Reinstall
-
-If you suspect the Beans plugin isn't properly installed on your Shopify site,
-Beans provides a straightforward solution to address this without any negative side effects.
-
-1. From the Beans admin dashboard, navigate to the Shopify integration home page.
-2. Select **Status** in the integration navigation menu.
-3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
-
-## Shopify OS 2.0
-
-If you are using a Shopify Online Store 2.0 theme, it is essential to enable the Beans app in your Shopify theme.
-The new Online Store 2.0 is an improvement released by Shopify to facilitate
-full integration for app developers with a merchant's shop.
-
-1. From the Shopify dashboard, go to your Themes page.
-2. Locate the Current theme section and click on Customize.
-3. Click on Theme Settings, go to the App Embed tab, then locate the Beans Ultimate app extension and switch it on.
+Access your Shopify admin and verify that Beans is listed among the applications on the Apps page.
 
 <Frame>
-  <img
-    src="/assets/images/integrations/shopify/theme-extension.png"
-    alt="Shopify Theme extension"
-    style={{ borderRadius: '0.5rem' }}
-  />
+  <img src="/assets/images/integrations/shopify/uninstall.webp" alt="uninstall" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## Rewards page
+1. Click on Delete to remove the application from your store.
 
-Beans automatically adds a rewards page to your shop.
-By default, you can access the page at `https://example.myshopify.com/pages/rewards`, assuming
-your website's full URL is `https://example.myshopify.com`.
+2. Remove the pages for your loyalty program or referral program that were
+   automatically created by the Beans app.
 
-The Shopify navigation tool let you dynamically set up a navigation menu for your website.
-We recommend adding the link to the rewards program in the Main menu in order to make it easy for your customers to access.
-Here is how to do: [Editing Shopify store menu](https://help.shopify.com/en/manual/sell-online/online-store/menus-and-links/editing-menus)
+   a. From your Shopify admin, navigate to the Pages Section (Online Store >Pages)
 
-## Customer accounts
+   b. Look for the Rewards Program page and delete it
 
-In order to get the app to work as expected, it is required to enable customer accounts for your Shopify Store.
-Shopify gives you the option to set customer accounts as disabled, optional or required.
-Beans requires customer accounts to be set to optional or required.
-Beans support both _Classic customer accounts_ and _New customer accounts_.
+   c. Look for the Referral Program page and delete it
 
-Here is how to enable customer accounts with Shopify:
-[Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
+3. The last step is to clear the authentication snippet.
+
+   a. Navigate to Online Store > Themes select Edit code in the Actions dropdown
+
+   b. Open the theme.liquid file
+
+   c. Look for the following line and remove it:
+
+```yaml
+<script>window.beans_cjs_id = '{{ customer.id }}';
+window.beans_cjs_email = '{{ customer.email }}';</script>
+```
+     d. Make sure to save your changes.
