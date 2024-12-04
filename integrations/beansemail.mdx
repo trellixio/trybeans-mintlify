@@ -4,58 +4,20 @@ description: 'Set up automated email notifications for your loyalty program.'
 icon: 'envelope-open-text'
 ---
 
-## Replacement Tags
+## Replacement tags
 
-Replacement tags are available in the Beans Emails automation tool to create personalized or
-dynamic email content.
+Replacement tags are dynamic placeholders used in email templates to personalize content for each recipient. When an email is sent, these tags are automatically replaced with actual customer data such as names, points balances, and transaction details.
 
-Beans Emails provides template variables that allow you to customize message content. Commonly
-used variables include rewards and referral tags, enabling the inclusion of recipient-specific
-information such as names, referral links, and reward transaction details.
+### Global tags
 
-### Personalization Tags
+Global tags work across all email notifications and help personalize your communications:
 
-This tags are used to add subscriber information to emails and automated responses. The
-following are the most commonly used merge tags in Beansemail for personalization.
+- `[%first_name%]` - Inserts the customer's first name
+- `[%unsubscribe_link%]` - Inserts an unsubscribe link that allows customers to opt out of emails
 
-`[%first_name%]`
+### Notification-specific tags
 
-Inserts your subscriber's first name if it's available in your audience.
+Each email notification type has its own set of unique tags for personalizing content. These specialized tags allow you to include relevant details. You can find the available tags for each notification type in the Notifications section above.
 
-### Referral Tags
 
-`[%referrer_name%]`
 
-Inserts your referrer’s name if it's available in your audience.
-
-`[%referral_reward%]`
-
-Inserts the reward customer receives for a successful referral.
-
-### Reward Tags
-
-`- [%transaction_delta%]`
-
-Inserts for debited transaction.
-
-`+ [%transaction_delta%]`
-
-Inserts for credited transaction.
-
-`[%beans_value%]`
-
-Inserts the points value in the store's currency.
-
-`[%beans_balance%]`
-
-Inserts the customer's point balance.
-
-`[%transaction_description%]`
-
-Inserts the transaction in which customer was either debited or credited for.
-
-### Others
-
-`[%unsubscribe_link%]`
-
-Inserts the unsubscribe link.
