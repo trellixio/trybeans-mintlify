@@ -85,6 +85,10 @@
       ]
     },
     {
+      "group": "Miscellaneous",
+      "pages": ["manage/miscellaneous/faq"]
+    },
+    {
       "group": "Integrations",
       "pages": [
         "integrations/woocommerce",
