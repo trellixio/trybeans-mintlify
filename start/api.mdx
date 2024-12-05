@@ -1,0 +1,228 @@
+---
+title: 'API'
+description: 'Integrate Beans with custom e-commerce platforms'
+---
+
+Beans provides an API designed for seamless integration with custom online stores. The API
+facilitates direct communication between your e-commerce platform and Beans, enabling the
+implementation of loyalty and referral features.
+
+### Storefront integration
+
+The storefront integration script enables Beans to display customer-facing elements, such as
+loyalty program details, and to track customer interactions, including referrals and
+engagement.
+[Add Beans to Storefront]()
+
+### Webhooks integration
+
+Webhooks allow Beans to receive notifications when specific events occur in your store, such
+as order completion. These notifications trigger event-based actions, including awarding
+points for purchases to ensures synchronization and automation of rewards processing.
+
+[Setup Beans Webhooks]()
+
+## Webhooks
+
+Setting up Beans Webhooks for your online store
+
+Webhooks provide a mechanism to notify Beans of specific events in your store, such as a
+completed order. This allows Beans to automate actions like awarding loyalty points. Webhooks
+are implemented using URLs to which a JSON payload containing relevant event data is sent.
+
+### Customer webhook
+
+The Customer Webhook notifies Beans when a new customer registers on your store. To transmit
+customer registration data to Beans, use an HTTP POST request structured as follows:
+
+**Customer data**
+
+```yaml
+{
+  'id': 1847,
+  'first_name': 'John',
+  'last_name': 'Doe',
+  'email': 'john.doe@example.com',
+  'is_newsletter': True,
+  'tags': ['loyal', 'paying'],
+  'created_at': '2020-02-06T12:49:47-05:00',
+  'updated_at': '2022-02-06T12:49:47-05:00',
+}
+```
+
+**Create or update a customer**
+
+```yaml
+curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/customer/hook_created \
+  --request POST \
+  --user :sk_xxxxxxxxxxxxxxxxx \
+  --header "Content-Type: application/json" \
+  --data '<<customer_data>>'
+```
+
+**Delete a customer**
+
+```yaml
+curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/customer/hook_deleted \
+  --request POST \
+  --user :sk_xxxxxxxxxxxxxxxxx \
+  --header "Content-Type: application/json" \
+  --data '<<customer_data>>'
+```
+
+### Order webhook
+
+Order Webhook is to let Beans know when a new order is placed in your shop. To post new order
+information to Beans just use an HTTP POST request like this one:
+
+**Order data**
+
+An order can contain a customer object.
+
+```yaml
+order_data = {
+    "id": 13207,
+    "currency": "USD",
+    "email": "john.doe@example.com",
+    "ref": "13207",
+    "total": "53.00",
+    "subtotal": "33.00",
+    "amount_shipping": "20.00",
+    "amount_giftcard": "0.00",
+    "amount_tax": "0.00",
+    "cancelled_at": None,
+    "processed_at": "2022-02-06T12:49:47-05:00",
+    "is_fulfilled": False,
+    "is_refunded": True,
+    "is_paid": True,
+    "customer": {
+        "id": 1847,
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "is_newsletter": True,
+        "tags": ["loyal", "paying"],
+        "created_at": "2020-02-06T12:49:47-05:00",
+        "updated_at": "2022-02-06T12:49:47-05:00",
+    }
+}
+```
+
+**Create or update an order**
+
+```yaml
+curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/order/hook_created \
+  --request POST \
+  --user :sk_xxxxxxxxxxxxxxxxx \
+  --header "Content-Type: application/json" \
+  --data '<<order_data>>'
+```
+
+## Storefront integration
+
+Setting up beans.js on your e-commerce store
+
+Beans.js is a lightweight JavaScript library designed to integrate Beans with any e-commerce
+platform. It enables seamless addition of Beans applications to your store with minimal coding
+and provides flexibility for customizing the storefront display.
+
+### Including beans.js
+
+To set up beans.js, include the script on every page of your store. Load the script directly
+from the Beans content delivery network (CDN) at the following URL:
+
+```yaml
+<script src="https://cdn.trybeans.com/lib/ultimate/edge/vanilla/ultimate.beans.js?shop=<<public_id>>"></script>
+```
+
+Replace `public_id` with your store's unique public identification key. This key is essential
+for linking the library to your shop and can be obtained by contacting Beans customer support.
+
+Avoid bundling the script with other assets or hosting it independently to ensure proper
+functionality and future updates.
+
+### Initializing beans.js
+
+To enable Beans to identify the currently authenticated user, include the following script on
+every page of your store. This ensures the library can recognize the customer's session and
+associate interactions with the correct user account.
+
+```
+<script>window.beans_cjs_id='1234567890'; window.beans_cjs_email='customer@email.com';</script>
+```
+
+**window.beans_cjs_id**: Represents the unique identifier of the currently authenticated
+customer. This value should be dynamically assigned based on the logged-in customer's
+information.
+
+**window.beans_cjs_email**: Represents the email address of the authenticated customer.This
+value should also be dynamically set to reflect the current session.
+
+```yaml
+const config = {
+  currentPage: '',
+  onLogin: () => (window.location = '/login'),
+  onRegister: () => (window.location = '/register'),
+  liana: {
+    onAbout: () => (window.location = '/rewards'),
+    pagePlaceholder: document.getElementById('rewards'),
+  },
+  bamboo: {
+    onAbout: () => (window.location = '/referral'),
+    pagePlaceholder: document.getElementById('referral'),
+  },
+};
+```
+
+**currentPage**: Identifies the current page where beans.js is active. It should match one of
+the following values based on the page type:
+product | cart | checkout | login | register | reward.
+For all other pages, leave this value empty.
+
+**onLogin**: Defines the function for redirecting users to the login page. For instance, if
+your login page is located at `/login`, the function should redirect to this path. Replace /login with the correct location used in your store.
+
+**onRegister**: Defines the function for redirecting users to the registration page.
+Similarly, if the registration page is at /register, the function should point to this path,
+replacing `/register` with your store's registration page location.
+
+**liana.onAbout**: Specifies the function for redirecting users to the rewards program page (in
+the example above). If the page is located at `/rewards`, ensure the function redirects here.
+Update the path if your store uses a different location for the rewards program.
+
+**liana.pagePlaceholder**: Refers to the container within the rewards program page where
+beans.js will render the program details. Add the following HTML snippet to your rewards
+program page to define this container:
+
+```yaml
+<div id="rewards"></div>
+```
+
+Ensure the value of pagePlaceholder matches the id or selector of this container (rewards in
+this example). Beans.js will use this container to display the rewards program dynamically.
+
+**bamboo.onAbout**: Specifies the function responsible for redirecting users to your store's
+referral program page. If the referral program page is located at `/referral`, ensure the
+function points to this URL. Update the path to reflect the actual location of the referral
+program in your store.
+
+**bamboo.pagePlaceholder**: Defines the container where beans.js will render the referral program
+content. Add the following HTML snippet to your referral program page to create the required
+container:
+
+```yaml
+<div id="referral"></div>
+```
+
+Ensure the value of pagePlaceholder corresponds to the id or selector of this container
+(referral in this example). Beans.js will use this container to dynamically render the
+referral program interface for your customers.
+
+Just below the initialization data add the following line to initialize beans.js
+
+```yaml
+Beans3.Radix.init(config);
+```
+
+After successfully integrating Beans with your storefront, the reward and referral program
+pages should now be visible and functional on your store.

@@ -54,7 +54,7 @@
   "navigation": [
     {
       "group": "Get started",
-      "pages": ["start/introduction"]
+      "pages": ["start/introduction", "start/api"]
     },
     {
       "group": "Manage",
@@ -64,7 +64,8 @@
         "manage/admin/tiers",
         "manage/admin/history",
         "manage/admin/analytics",
-        "manage/admin/integrations"
+        "manage/admin/integrations",
+        "manage/admin/settings"
       ]
     },
     {
