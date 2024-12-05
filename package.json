@@ -21,7 +21,6 @@
     "sharp": "^0.33.4"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
     "markdownlint": "^0.34.0",
     "markdownlint-cli": "^0.41.0",
     "prettier": "^3.3.1"
