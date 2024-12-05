@@ -1,90 +1,10 @@
 ---
 title: BigCommerce
-description: 'Integrate Beans with your BigCommerce Store.'
+description: 'Integrate Beans with your BigCommerce store.'
 icon: 'B'
 ---
 
 ## Redemption
-
-### Minimum points required for redemption
-
-To redeem points, customers must have at least a specified minimum amount in their account.
-Setting a minimum points threshold ensures that customers accumulate enough points before
-they can redeem them.
-
-It's important to set the minimum points level in a way that aligns with both your business
-objectives and customer expectations.
-
-**Example**
-
-If the minimum points required for redemption is set to 100, customers will need at least
-100 points in their account to redeem rewards.
-
-### Maximum discount per redemption
-
-The maximum discount per redemption sets a limit on how much of the total purchase price
-can be discounted through points. This ensures that the discounts provided through redemptions
-remain within acceptable limits for your business.
-
-**Examples**
-
-If a customer is purchasing a product worth $10 and has 1000 points (equivalent to $10) and
-the maximum discount is set to 50%, they will be able to redeem only 500 points, resulting in
-a $5 discount.
-
-### Eligible Collections
-
-Enable point redemption for specific product collections in your store.
-
-Beans allows you to designate certain product collections where customers can redeem points
-for discounts. By selecting "Eligible Collections," you can promote specific products or
-collections within the rewards program, encouraging customer purchases.
-
-Using the Beans admin interface, you can configure which product collections qualify for
-point redemption. Once set, customers can redeem points for discounts on items within these
-collections.
-
-**Steps to set up Eligible collections**
-
-1. From the Beans admin dashboard, go to your BigCommerce Integrations home page.
-2. Select Preference in the integration menu.
-3. Locate the Eligible Collections section.
-4. Choose the product collections that will allow point redemption.
-5. Click Save to confirm.
-
-Only published products with valid pricing will be available for selection.
-
-### Non-Eligible Collections
-
-Restrict point redemption for specific products in your store.
-
-While Beans allows customers to redeem points for discounts on most purchases, you may want to
-exclude certain products from your rewards program. The "Non-Eligible Collections" feature lets
-you prevent point redemption for selected items, which can be useful for premium products,
-new releases, or specific collections you want to exempt from discounts.
-
-Through the Beans admin interface, you can choose which product collections will be excluded
-from point redemption. Once these non-eligible collections are set, customers cannot redeem
-points for products in those collections, even if they are members of your rewards program.
-
-**Steps to set up Non-Eligible collections**
-
-1. From the Beans admin dashboard, navigate to your BigCommmerce Integrations home page.
-2. Select **Preference** in the integration navigation menu.
-3. Find the **Non-Eligible Collections** section.
-4. Choose the collection of products that will be excluded from point redemption.
-5. When finished, click the **Save** button.
-
-Only products that have been published in your store and have a valid price will be available for selection.
-
-### Advance
-
-**Auto registration for rewards programs**
-
-The Auto Registration feature automates the process of enrolling new customers into a rewards
-program. By automatically adding customers when they create an account or complete a purchase,
-this integrates customers seamlessly into the program, and maximizes participation by ensuring
-no customers are excluded from the outset.
 
 <Frame>
   <img
@@ -93,3 +13,64 @@ no customers are excluded from the outset.
     style={{ borderRadius: '0.5rem' }}
   />
 </Frame>
+
+### Minimum points required for redemption
+
+Sets a minimum points threshold that customers must reach before redeeming rewards. By default, customers need to accumulate at least 100 points before being eligible for redemption. You can adjust this threshold higher to ensure meaningful program engagement and prevent inefficient redemptions. For example, if you set the minimum to 500 points, customers would need to earn at least 500 points before they can start redeeming rewards.
+
+**How it works:**
+1. From the BigCommerce integration dashboard, navigate to the **Preferences**
+2. Locate the **Redemption** section and enter your desired minimum points threshold in the **Minimum Points Required** field
+3. Click **Save** to apply changes
+
+<Tip>
+Choose a minimum threshold that balances customer satisfaction with your business goals. Too high may discourage participation, while too low could reduce program effectiveness.
+</Tip>
+
+### Maximum discount per redemption
+
+Sets a limit on how much of the total purchase price can be discounted through points. This ensures that the discounts provided through redemptions remain within acceptable limits for your business. For example, if a customer wants to buy a product priced at \$10 and has 1000 points (equal to \$10), but the maximum discount is set to 50%, they can only use 500 points, giving them a \$5 discount.
+
+**How it works:** 
+1. From the BigCommerce integration dashboard, navigate to the **Preferences**
+2. Locate the **Redemption** section and use the **Maximum Discount Per Redemption** slider to set your desired maximum discount percentage
+3. Click **Save** to apply changes
+
+<Tip>
+Setting a reasonable maximum discount percentage helps maintain a balance between rewarding customers and protecting your profit margins.
+</Tip>
+
+
+### Eligible collections
+
+Enable point redemption for specific product collections in your store. Customers can then redeem points only for products in the selected collections. When no collections are selected, all products are eligible for redemption.
+
+**How it works:**
+
+1. From the BigCommerce integrations home page, navigate to **Preferences**.
+2. Locate the **Eligible Collections** section and click on **Select collections**.
+3. Choose the collections you want to make eligible for point redemption.
+4. Click **Save** to confirm.
+
+
+### Collections exclusion - Loyalty
+
+When collections are excluded, customers will not earn points when purchasing products from those collections. This helps you maintain control over which products contribute to rewards program earnings.
+
+
+**How it works:**
+
+1. From the BigCommerce integrations home page, navigate to **Preferences**.
+2. Locate the **Collections exclusion - Loyalty** section and click on **Select collections**.
+3. Choose the collections you want to exclude from points earnings.
+4. Click **Save** to confirm.
+
+
+## Auto registration
+
+Automatically enrolls new customers into your rewards program when they create an account or make a purchase. This ensures seamless participation and maximum program engagement.
+
+**How it works:**
+1. From the BigCommerce integrations home page, navigate to **Preferences**.
+2. Locate the **Advance** section and switch the **Auto registration** toggle to **On**.
+3. Click **Save** to confirm.
