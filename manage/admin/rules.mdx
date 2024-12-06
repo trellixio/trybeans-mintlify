@@ -4,9 +4,85 @@ description: 'Set up and manage reward rules.'
 icon: 'list-tree'
 ---
 
-## Why do rules have minimum points?
+Beans has a powerful rules engine designed to let you define how you want customers to earn points.
+Using the rules, you can specify exactly how many points you want
+to give to your customers when they complete a predefined action.
+You can set as many rules as you like.
+We recommend setting at least 5 or 6 rules to make your rewards program dynamic and attractive to your customers.
+Rules are automated processes that ensure customers get rewarded as soon as actions are completed.
 
-Why do some rules require to set a minimum points value?
+## Activate a rule
+
+When you activate a rule, it becomes available to your customers. Customers will be able to see the rule
+when they visit your rewards program page. There are three types of automated rules:
+built-in rules, integration-dependent rules, and user-defined rules.
+
+### Built-in rules
+
+Built-in rules are readily accessible in the Beans admin interface and can be activated without any extra steps.
+Some of these rules are even active by default.
+For example, the [Register rule](/manage/rules/register) is a built-in rule that rewards
+customers with an initial amount of points when they join your rewards program. This rule is active by default.
+
+Adding a built-in rule is a straightforward process:
+
+1. From the Beans admin interface, go to the **Rules** page.
+2. From the top right, click on the **Add rule** button.
+3. Locate the built-in rule that you want to add in the list of available rules and click on **Activate**.
+
+### Integration-dependent rules
+
+Some rules depend on setting up specific
+[integrations between Beans and a third-party application](https://www.trybeans.com/integrations).
+The integration is a requirement for the rule to function as expected.
+For example, the [Judge.me integration](/integrations/judgeme)
+lets you set up a rule to reward customers for product reviews.
+Without setting up the Judge.me integration first, you will not be able to reward customers for reviews.
+
+To add an integration-dependent rule, follow these steps:
+
+1. From the [Integrations directory](/manage/admin/integrations),
+   locate the integration that you are interested in and install it.
+2. From the Beans admin interface, go to the **Rules** page.
+3. From the top right, click on the **Add rule** button.
+4. Locate the integration-dependent rule that you want to add in the list of available rules and click on **Activate**.
+
+### User-defined rules
+
+Beans allows merchants to define custom rules.
+It is the merchant's responsibility to ensure that the rule is correctly implemented and functions as expected.
+User-defined rules are super flexible and let you virtually reward customers for almost anything you can imagine.
+To implement custom rules, you need to use the [Beans API](https://api.trybeans.com/v3/doc).
+
+## Set up a rule
+
+Once you have activated a rule, you can configure its parameters.
+When applicable, you can edit how many points to award to customers for completing the action.
+Additionally, some rules let you configure extra parameters such as conditions that customers should meet
+to be rewarded or limits on how often the customer can be rewarded for the action.
+
+To set up a rule's parameters, follow these steps:
+
+1. From the Beans admin interface, go to the **Rules** page.
+2. Locate the rule that you want to edit in the list of activated rules and click on **Edit**.
+3. Update the rule settings and click on **Save**.
+4. You might want to wait an hour for the updates to propagate to all servers,
+   especially for rules that depend on third-party integrations.
+5. Test the rule to ensure that the update is effective.
+
+## Deactivate a rule
+
+If a rule no longer suits your objectives, you can deactivate it:
+
+1. From the Beans admin interface, go to the **Rules** page.
+2. Locate the rule that you want to deactivate in the list of activated rules and click on **Edit**.
+3. At the bottom left, click the **Deactivate rule** button.
+4. You might want to wait an hour for the updates to propagate to all servers,
+   especially for rules that depend on third-party integrations.
+
+## Frequently Asked Questions
+
+#### Why do some rules require to set a minimum points value?
 
 Some rules in a rewards program require a minimum points value to ensure a balance between
 customer satisfaction and cost-effectiveness. Establishing appropriate point values is
@@ -15,7 +91,7 @@ financial viability.
 
 Minimum points thresholds help prevent customer dissatisfaction caused by insignificant
 rewards. For example, if a birthday reward is set to an excessively low value, such as 25
-points (equivalent to $0.25), customers may feel undervalued. Receiving minimal rewards for
+points (equivalent to \$0.25), customers may feel undervalued. Receiving minimal rewards for
 a year-long wait can lead to negative perceptions of the brand. Dissatisfied customers are
 more likely to report reward notifications as spam, harming the brand's reputation and email
 deliverability.
