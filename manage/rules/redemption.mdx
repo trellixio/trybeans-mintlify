@@ -68,26 +68,6 @@ You still decide the value of the reward awarded to customers.
 In addition, the redemption settings allow
 you to set how customers can use their points.
 
-## Redemption Issues
-
-Customers sometimes experience difficulties when trying to redeem their points, or find that
-point redemption is not functioning correctly.
-
-#### Process of Point Redemption
-
-When customers redeem points for a purchase, Beans promptly deducts the points from their
-account. If the purchase is not completed for any reason, the redemption is considered null.
-Typically, the points are automatically returned to the customer's account within a maximum
-of 48 hours.
-
-#### Issue with points deducted after payment fails
-
-Reported on WooCommerce
-
-On occasion, especially when using external payment gateways like PayPal, an order might be
-marked as validated in your system, even though the payment did not successfully process.
-Under such circumstances, the points are only reinstated to the customer's account if the
-retailer takes action to cancel the order.
 
 ## Pending debits
 
@@ -139,3 +119,9 @@ At this stage, our team is exploring solutions to make Beans even more accessibl
 especially those who are working with an "inflated currency".
 There is a feature request on our [roadmap](https://beans.productlane.io/roadmap) about it.
 We encourage you to upvote and contribute by sharing your use case.
+
+#### What happens to points when a purchase fails or is abandoned?
+
+When customers redeem points for a purchase, Beans creates a pending debit transaction. If the purchase is not completed 
+(due to payment failure, cart abandonment, etc.) within 48 hours, the points are returned automatically to the customer's account and can be used for future purchases. This ensures customers never lose points due to 
+incomplete transactions.
