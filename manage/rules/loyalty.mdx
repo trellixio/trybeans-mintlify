@@ -4,31 +4,85 @@ description: 'Get X points for each dollar spent in our shop.'
 icon: 'heart'
 ---
 
-## How are loyalty revenues generated?
+<Info>
+  The loyalty rule is one of the cornerstone rules of the rewards program and is active by default for all rewards
+  programs.
+</Info>
+
+<Tip>The recommended value for this rule is between 5 and 20 points per dollar spent in the store.</Tip>
+
+The loyalty rule determines how customers are rewarded for their purchases in your shop.
+By offering points for each dollar spent, you incentivize customers to return and make additional purchases,
+thereby increasing customer retention and satisfaction.
+This rule allows you to specify the number of points customers will
+earn for every dollar (or equivalent currency unit) spent in your store.
+
+## How it works
+
+Points are calculated based on the final value of the order after applying discounts
+but before adding shipping fees and taxes.
+This method ensures that the rewards are fair and reflect the actual spend on products.
+
+- Discounts applied at checkout decrease the amount of points customers earn for a purchase.
+- Shipping costs do not affect how many points customers earn for a purchase.
+- Taxes applied at checkout do not affect how many points customers earn for a purchase.
+- Taxes included in the product price increase the amount of points customers earn for a purchase.
+
+For example, consider the following order details:
+
+- Rule value: 5 points/$
+- Subtotal (Cart value): $100
+- Discount (Coupon code): $20
+- Shipping Fees: $30
+- Taxes: $40
+- Total: $150
+
+In this scenario, points are awarded based on the subtotal after the discount.
+The customer will earn points on the $80 spent on products, excluding shipping fees and taxes.
+
+```math
+Points earned = Rule value * (Subtotal − Discount) = 5 points/$ * ($100−$20) = 400 points
+```
+
+### Order status
+
+**Payment status**: Customers are awarded points only when the order has been paid.
+Orders pending payment do not receive points.
+
+**Order cancellations**: When an order is cancelled, the points awarded for that order are also cancelled.
+
+**Partial refunds**: When an order is partially refunded, the customer loyalty points associated with that order
+are reverted in proportion to the amount refunded. This maintains the accuracy of the rewards program.
+Total refunds are treated the same way as partial refunds.
+Order cancellation is preferred to total refund, as it maintains a cleaner history of transactions.
+
+## Frequently Asked Questions
+
+### How are loyalty revenues generated?
 
 Loyalty revenues are income generated from your store's rewards program. You can monitor
 this revenue on the Beans's admin interface's analytics page.
 
-### What accounts for loyalty revenue?
+#### What accounts for loyalty revenue?
 
 Orders with redemption will count towards the loyalty revenue.
 
-## Enrollment of customers in the rewards program
+### Enrollment of customers in the rewards program
 
-### New Customer Registration
+**New Customer registration**
 
 By default, new customers who create an account on your store automatically join the rewards
 program. If the welcome email is enabled, they will receive a notification introducing them
 to the program and outlining its benefits.
 
-### Existing Customers
+**Existing customers**
 
 Existing customers—those with accounts prior to the inception of the loyalty program are
 automatically enrolled upon activation of the program. However, only customers who have
 opted to receive marketing emails are eligible for auto-enrollment. Like new customers,
 existing customers will receive a welcome email if the notification is activated.
 
-### Guest Customers
+**Guest customers**
 
 Guest customers—those who place orders without creating an account are enrolled in the
 rewards program only if they consent to receive marketing offers at checkout. In some
@@ -41,7 +95,7 @@ Beyond auto-enrollment, you can add members to the rewards program
 [manually](https://docs.trybeans.com/manage/admin/members#add-a-member) or by
 [importing their details](https://docs.trybeans.com/manage/admin/members#import-members).
 
-## Loyalty points calculation
+### Loyalty points calculation
 
 How are points computed for an order? How do taxes, shipping cost, and discounts affect points
 earned?
