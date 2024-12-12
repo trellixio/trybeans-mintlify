@@ -1,17 +1,9 @@
 ---
 title: BigCommerce
-description: 'Integrate Beans with your BigCommerce Store.'
+description: 'Integrate Beans with your BigCommerce store.'
 icon: 'B'
 ---
 
-<Frame>
-  <img
-    src="/assets/images/integrations/bigcommerce/hero.webp"
-    alt="Bigcommerce"
-    title="Bigcommerce"
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
 
 BigCommerce is an e-commerce platform designed to provide merchants with the tools
 they need to sell products online effectively.
@@ -39,15 +31,67 @@ encouraging repeat business and fostering a loyal customer base.
 7. Paste all four credentials into their respective fields in the Beans interface.
 8. Click **Connect** to finalize the integration.
 
+## Rewards page
+
+To improve the visibility of your rewards program and make it easier for customers to find,
+we suggest adding a link to the rewards page in your main menu. Here's an article on how to do
+it: [BigCommerce - Navigation Menu Options](https://support.bigcommerce.com/s/article/Web-Pages?language=en_US#navigation).
+
+## Redemption
+
 <Frame>
   <img
-    src="/assets/images/integrations/bigcommerce/setup.gif"
-    alt="Setup bigcommerce"
+    src="/assets/images/integrations/bigcommerce/redemption.webp"
+    alt="Redemption"
     style={{ borderRadius: '0.5rem' }}
   />
 </Frame>
 
-## Reinstall
+### Minimum points required for redemption
+
+Sets a minimum points threshold that customers must reach before redeeming rewards. By default, customers need to accumulate at least 100 points before being eligible for redemption. You can adjust this threshold higher to ensure meaningful program engagement and prevent inefficient redemptions. For example, if you set the minimum to 500 points, customers would need to earn at least 500 points before they can start redeeming rewards.
+
+**How it works:**
+1. From the BigCommerce integration dashboard, navigate to **Preferences**
+2. Locate the **Redemption** section and enter your desired minimum points threshold in the **Minimum Points Required** field
+3. Click **Save** to apply changes
+
+
+<Tip>
+Choose a minimum threshold that balances customer satisfaction with your business goals. Too high may discourage participation, while too low could reduce program effectiveness.
+</Tip>
+
+### Maximum discount per redemption
+
+Sets a limit on how much of the total purchase price can be discounted through points. This ensures that the discounts provided through redemptions remain within acceptable limits for your business. For example, if a customer wants to buy a product priced at \$10 and has 1000 points (equal to \$10), but the maximum discount is set to 50%, they can only use 500 points, giving them a \$5 discount.
+
+**How it works:** 
+1. From the BigCommerce integration dashboard, navigate to **Preferences**
+2. Locate the **Redemption** section and use the **Maximum Discount Per Redemption** slider to set your desired maximum discount percentage
+3. Click **Save** to apply changes
+
+<Tip>
+Setting a reasonable maximum discount percentage helps maintain a balance between rewarding customers and protecting your profit margins.
+</Tip>
+
+
+### Eligible collections
+
+Enable point redemption for specific product collections in your store. Customers can then redeem points only for products in the selected collections. When no collections are selected, all products are eligible for redemption.
+
+**How it works:**
+
+1. From the BigCommerce integrations home page, navigate to **Preferences**.
+2. Locate the **Eligible Collections** section and click on **Select collections**.
+3. Choose the collections you want to make eligible for point redemption.
+4. Click **Save** to confirm.
+
+
+### Collections exclusion - Loyalty
+
+When collections are excluded, customers will not earn points when purchasing products from those collections. This helps you maintain control over which products contribute to rewards program earnings.
+
+**How it works:**
 
 If you suspect the Beans plugin is not properly installed on your BigCommerce site, Beans
 provides a straightforward solution to address this without any negative side effects.
@@ -56,14 +100,21 @@ provides a straightforward solution to address this without any negative side ef
   <img src="/assets/images/integrations/bigcommerce/Reinstall.gif" alt="order log" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-1. From the Beans admin dashboard, navigate to the BigCommerce integration home page.
-2. Select **Status** in the integration navigation menu.
-3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+1. From the BigCommerce integration dashboard, navigate to **Preferences**
+2. Locate the **Collections exclusion - Loyalty** section and click on **Select collections**
+3. Choose the collections you want to exclude from points earnings
+4. Click **Save** to confirm
 
-## Rewards page
 
-Beans automatically adds a rewards page to your shop. By default, you can access the page at `https://example.mybigcommerce.com/rewards`, assuming your website’s full URL is `https://example.mybigcommerce.com`.
+## Auto registration
 
-To improve the visibility of your rewards program and make it easier for customers to find,
-we suggest adding a link to the rewards page in your main menu. Here's an article on how to do
-it: [BigCommerce - Navigation Menu Options](https://support.bigcommerce.com/s/article/Web-Pages?language=en_US#navigation).
+
+Automatically enrolls new customers into your rewards program when they create an account or make a purchase. This ensures seamless participation and maximum program engagement.
+
+**How it works:**
+1. From the BigCommerce integration dashboard, navigate to **Preferences**
+2. Locate the **Advance** section and switch the **Auto registration** toggle to **On**
+3. Click **Save** to confirm
+
+
+
