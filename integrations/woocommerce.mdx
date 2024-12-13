@@ -130,3 +130,38 @@ issues with connecting Beans to your store.
 - **Invalid WordPress site location**: WordPress must be installed at the root level of your domain or subdomain.
   For example, if you're developing a store at `www.example.com/dev/`, our server will attempt to connect
   to `www.example.com`. To avoid this issue, install the development store on a subdomain like the `dev.example.com`
+
+## Account synchronization
+
+Customers with existing accounts on your store are automatically synchronized with the rewards
+or referral program within 24 hours of the application's installation.
+
+## Updating your shop domain
+
+To ensure secure operations, Beans validates data by verifying that it originates from the
+domain registered in your Beans account. This process protects against data tampering and
+unauthorized access.
+
+If the domain of your WordPress site or WooCommerce shop changes, Beans will not automatically
+recognize the new domain. As a result, data from the updated domain will be rejected. To
+address this, you must update the domain linked to your Beans account by reconnecting the
+integration on the WooCommerce integrations page.
+
+## Reconnect integraton
+
+1. From the Beans admin dashboard, navigate to the WooCommerce integration home page.
+2. Select **Status** in the integration navigation menu.
+3. From the **Actions** dropdown on the top right, select **Disconnect Integration** Beans.
+4. Once disconnected, you can [Set Up](https://docs.trybeans.com/integrations/woocommerce#setup)
+   your WooCommerce integration again.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/woocommerce/update-shop-domain.gif"
+    alt="Reset synchronization"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+After completing these steps, Beans will recognize the new domain and resume processing data
+from your shop. If issues persist, contact the Beans support team for assistance.
