@@ -4,35 +4,6 @@ description: 'Integrate Beans with your Shopify store.'
 icon: 'shopify'
 ---
 
-<Frame>
-  <img src="/assets/images/integrations/shopify/hero.webp" alt="Shopify" style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-Shopify is a leading e-commerce platform that provides
-merchants with the tools they need to sell products online efficiently.
-[Integrating Beans with Shopify](https://www.trybeans.com/integrations/radix:shopify)
-enhances this experience by enabling merchants to boost
-customer loyalty through a rewards system. With Beans for Shopify, you can reward customers for their
-purchases, encouraging repeat business and fostering a loyal customer base.
-
-## Setup
-
-To begin, install the [Beans app for Shopify](https://apps.shopify.com/beans)
-through the Shopify App Store. Follow the
-[Shopify guideline](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
-on how to install an app through the Shopify App Store.
-
-## Reinstall
-
-If you suspect the Beans plugin isn't properly installed on your Shopify site,
-Beans provides a straightforward solution to address this without any negative side effects.
-
-1. From the Beans admin dashboard, navigate to the Shopify integration home page.
-2. Select **Status** in the integration navigation menu.
-3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
-
-## Shopify OS 2.0
-
 If you are using a Shopify Online Store 2.0 theme, it is essential to enable the Beans app in your Shopify theme.
 The new Online Store 2.0 is an improvement released by Shopify to facilitate
 full integration for app developers with a merchant's shop.
@@ -68,3 +39,30 @@ Beans support both _Classic customer accounts_ and _New customer accounts_.
 
 Here is how to enable customer accounts with Shopify:
 [Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
+
+## Using discount codes with points redemption
+
+Managing potential conflicts between discount codes and points redemption in your Beans rewards program.
+
+Beans applies points redemption by generating discount codes, which are automatically applied
+to your customer’s cart at checkout. The compatibility of these codes with other discounts
+depends on your Shopify plan and settings.
+
+**Shopify (Classic)**
+
+If you are using the classic version of Shopify, customers cannot apply multiple discount
+codes at checkout. This means that when a customer redeems points through Beans, they won’t
+be able to use another discount code simultaneously.
+
+**Shopify Plus**
+
+If you are a Shopify Plus merchant, you can enable multiple discount codes at checkout
+by contacting Shopify to activate the feature for your store. However, even with this
+capability, discount codes might still be mutually exclusive. This happens when one
+discount code’s rules conflict with another, such as:
+
+- Cart-specific discount limitations.
+- Custom redemption rules, including minimum points redemption.
+
+It’s important to review your discount and redemption settings to ensure your customers can
+redeem their points without issues while maintaining proper management of other discount codes.
