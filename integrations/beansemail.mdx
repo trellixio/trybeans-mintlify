@@ -155,3 +155,38 @@ email marketing solution.
 
 For advanced email marketing features and fine tuned notifications, we recommend using
 dedicated [email marketing platforms that we integrate with](https://www.trybeans.com/integrations#marketing).
+
+## Replacement tags
+
+Replacement tags are dynamic placeholders used in email templates to personalize content for each recipient.
+When an email is sent, these tags are automatically replaced with actual customer data such as names, points balances,
+and transaction details.
+
+### Global tags
+
+Global tags work across all email notifications and help personalize your communications:
+
+- `[%first_name%]` - Inserts the customer's first name.
+- `[%last_name%]` - Inserts the customer's last name.
+- `[%unsubscribe_link%]` - Inserts an unsubscribe link that allows customer's to opt out of emails.
+- `[%beans_value%]`- Inserts the value of customer's balance in real currency.
+- `[%beans_balance%]`- Inserts the customer's balance in points.
+- `[%tier_name%]` Inserts the customer's tier name.
+  <Tip>This [%tier_name%] tag will only display data if the tier feature is activated.</Tip>
+
+### Notification-specific tags
+
+Each email notification type has its own set of unique tags for personalizing content.
+These specialized tags allow you to include relevant details. You can find the available tags
+for each notification type in the Notifications section above.
+
+**For points transactions: debit or credit**
+
+- `[%transaction_delta%]` - The delta (amount of points) of the current transaction.
+- `[%transaction_description%]` - The description of the current transaction.
+
+  **For referral invitations**
+
+- `[%referral_reward%]` The reward (amount of points) of the referral invitation.
+- `[%referrer_name%]` The name of the referrer sending the invitation.
+- `[%referral_link%]` The link of the referral invitation.
