@@ -68,3 +68,39 @@ Beans support both _Classic customer accounts_ and _New customer accounts_.
 
 Here is how to enable customer accounts with Shopify:
 [Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
+
+## Uninstallation
+
+Steps to uninstall the Beans application from Your Shopify store.
+
+Access your Shopify admin and verify that Beans is listed among the applications on the Apps page.
+
+<Frame>
+  <img src="/assets/images/integrations/shopify/uninstall.webp" alt="uninstall" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+1. Click on **Delete** to remove the application from your store.
+
+2. Remove the pages for your loyalty program or referral program that were
+   automatically created by the Beans app.
+
+   a. From your Shopify admin, navigate to the Pages Section (**Online Store** >**Pages**)
+
+   b. Look for the Rewards Program page and delete it
+
+   c. Look for the Referral Program page and delete it
+
+3. The last step is to clear the authentication snippet.
+
+   a. Navigate to **Online Store** > **Themes** select Edit code in the Actions dropdown
+
+   b. Open the **theme.liquid** file
+
+   c. Look for the following line and remove it:
+
+```yaml
+<script>window.beans_cjs_id = '{{ customer.id }}';
+window.beans_cjs_email = '{{ customer.email }}';</script>
+```
+
+     d. Make sure to save your changes.
