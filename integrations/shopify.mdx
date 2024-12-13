@@ -68,3 +68,39 @@ Beans support both _Classic customer accounts_ and _New customer accounts_.
 
 Here is how to enable customer accounts with Shopify:
 [Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
+
+## Shopify limitations
+
+### Shopify API Rate
+
+Shopify manages API rate limits using three different methods, each designed for specific use
+cases.
+
+The various types of rate limits your apps will encounter are:
+
+**Request-based limits**: Apps can make a maximum number of requests per minute. For example
+40 API requests within 60 seconds. Each request counts equally, regardless of how much or how
+little data is returned. This method is used by the REST Admin API.
+
+**Time-based limits**: Apps can make requests that take a maximum amount of time per minute.
+For example 120 requests within 60 seconds, with each request taking 0.5 seconds to return.
+More complex requests take longer and therefore take up a proportionally larger share of the
+limit. This method is used by the Storefront API.
+
+**Calculated query costs**: Apps can make requests that cost a maximum number of points per
+minute. For example 1000 points within 60 seconds. More complex requests cost more points and
+therefore take up a proportionally larger share of the limit. This method is used by the
+GraphQL API.
+
+Our application interacts with Shopify via their REST API, which enforces a limit on the
+number of API calls per second. This limitation can affect the number of customers who can
+redeem points simultaneously.
+
+For instance, if your store experiences high traffic and multiple customers attempt to redeem
+points at the same time, the API rate limit might be reached. As a result, some customers may
+temporarily be unable to complete their redemption.
+To address this, customers simply need to wait a few minutes and try redeeming their points
+again.
+
+To read more about Shopify API Rate Limitation click
+[here](https://docs.trybeans.com/manage/admin/integrations#integrations)
