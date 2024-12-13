@@ -96,7 +96,9 @@
         "integrations/judgeme",
         "integrations/klaviyo",
         "integrations/twitter",
-        "integrations/tokenify"
+        "integrations/tokenify",
+        "integrations/beansemail",
+        "integrations/bigcommerce"
       ]
     }
   ],
