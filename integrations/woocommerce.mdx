@@ -130,3 +130,85 @@ issues with connecting Beans to your store.
 - **Invalid WordPress site location**: WordPress must be installed at the root level of your domain or subdomain.
   For example, if you're developing a store at `www.example.com/dev/`, our server will attempt to connect
   to `www.example.com`. To avoid this issue, install the development store on a subdomain like the `dev.example.com`
+
+## Redemption
+
+### Minimum Points Requirement for Redemption
+
+The minimum points requirement establishes a threshold that customers must meet in their
+accounts to qualify for point redemption. This threshold ensures that points are sufficiently
+accumulated before redemption, promoting meaningful engagement with the rewards program.
+
+**Example**
+
+If the minimum points required for redemption is set to 100, customers will need at least 100
+points in their account to redeem rewards.
+
+### Maximum Discount per Redemption
+
+The maximum discount per redemption defines the upper limit of the purchase price that can be
+offset using points. This parameter ensures that point-based discounts remain within predefined boundaries.
+
+**Examples**
+
+If a customer is purchasing a product worth \$10 and has 1000 points (equivalent to \$10)
+and the maximum discount is set to 50%, they will be able to redeem
+only 500 points, resulting in a \$5 discount.
+
+### Subscription Redemption
+
+In order to allow customers to offset the cost of their subscription renewals, the subscription
+redemption feature enables them to apply earned points directly to their payments. This
+functionality helps to enhance the perceived value of your reward program.
+
+### Role Exclusion
+
+The Role Exclusion feature allows you to define specific WordPress user roles that should be
+excluded from earning rewards in the program. Any user assigned to these roles will not
+accumulate rewards for their purchases.
+
+When specifying roles in this field, it is important to note that it is case-sensitive. Ensure
+you enter the role names exactly as they appear in your WordPress settings to avoid any
+discrepancies.
+
+### Eligible Collections
+
+Use this option to specify collections eligible for points redemption. By selecting specific
+collections, you can restrict redemptions to those collections only.
+
+If no collections are selected, redemption will be allowed on all collections by default.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/woocommerce/redemption.webp"
+    alt="Redemption"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+### Display
+
+**Redemption on Checkout**
+
+Enable this option to show the redemption button on the checkout page, allowing customers to
+redeem points directly during their purchase.
+
+**Product Points**
+
+Activate this setting to display points information on individual product pages, helping
+customers understand how many points they can earn or redeem for specific products.
+
+**Cart Notices**
+
+Show customers their points balance with a notification on the cart page by enabling this
+option. This keeps them informed about their rewards during checkout.
+
+**Beans Watermark**
+
+Disable this option to remove the "Powered by Beans" watermark from the footer of the rewards
+program page, ensuring a more branded appearance for your store.
+
+**Auto Registration**
+
+Turn this setting on to automatically enroll new customers in the rewards program, simplifying
+the registration process and encouraging engagement.
