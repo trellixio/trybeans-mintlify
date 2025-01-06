@@ -65,7 +65,8 @@
         "manage/admin/history",
         "manage/admin/analytics",
         "manage/admin/integrations",
-        "manage/admin/settings"
+        "manage/admin/settings",
+        "manage/admin/gdpr"
       ]
     },
     {
@@ -96,6 +97,7 @@
         "integrations/klaviyo",
         "integrations/twitter",
         "integrations/tokenify",
+        "integrations/beansemail",
         "integrations/bigcommerce"
       ]
     }

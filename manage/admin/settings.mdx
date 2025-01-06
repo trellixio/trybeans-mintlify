@@ -1,109 +1,114 @@
 ---
 title: 'Settings'
-description: 'Edit your Beans merchant account settings and configuration.'
+description: 'Edit your Beans account settings and configuration.'
 icon: 'gear-complex'
 ---
 
-## FAQ
+The Settings page lets you manage a number of details about your Beans account including
+store details, personal information, team access, and plan options.
 
-Frequently Asked Questions about Beans
+## General
 
-### Who Is Beans For?
+Update essential store information:
 
-Beans is designed for e-commerce businesses. Whether you sell physical goods or offer services
-online, Beans can be utilized to support your operations.
+**Brand and Style**
 
-### How to Get Started with Beans
+- **Logo**: Your store's logo.
+- **Primary Color**: The main color used to match your brand identity. This color appears on
+  the rewards page, emails, redemption button, and other customer-facing elements.
 
-To use Beans without programming, check if an integration is available for your e-commerce
-platform. If you plan to work directly with the programming interface, refer to the API
-documentation for implementation details.
+**Storefront**
 
-### Phone Support
+- **Store Name**: The name of your business or store.
+- **Website**: Your store's website URL.
+- **Store Language**: Your store's primary language ([list of supported languages](https://www.trybeans.com/i18n)).
+- **Currency**: Your store's primary currency ([list of supported currencies](https://www.trybeans.com/i18n)).
+- **Category**: The product category that best describes your store. (This helps Beans provide relevant recommendations
+  and benchmarks for your rewards program based on similar businesses in your industry.)
+- **Region**: The geographical region where your store operates.
 
-Do You Provide It?
+<Frame>
+  <img src="/assets/images/admin/settings/general.webp" alt="Manual install" style={{ borderRadius: '0.5rem' }} />
+</Frame>
 
-No, we don’t offer phone support—but please don't take this as a sign of
-disinterest! We're eager to help and answer your questions.
+## Profile
 
-While it might seem unusual, we've found that beginning with email allows us to provide the
-quickest and most effective response. Our goal is to deliver fast, high-quality answers via
-email, ensuring you're always talking to a human that can help first-hand. If a phone call
-is needed after that, we're happy to arrange one.
+Edit your personal information including your email address, first name, and last name.
 
-### Why is Beans better than other options?
+<Frame>
+  <img src="/assets/images/admin/settings/profile.webp" alt="Manual install" style={{ borderRadius: '0.5rem' }} />
+</Frame>
 
-Here are some reasons why others have chosen Beans:
+## Team Access
 
-**End-user experience focus**: Beans is one of the few customer reward programs that prioritizes
-user engagement. Every part of our infrastructure is built with the end user in mind, ensuring
-that your customers stay engaged.
+Add team members from your organization as admins to help manage your loyalty program through
+the Beans dashboard. They'll have full access to configure and monitor the rewards program.
 
-**Managed and hassle-free**: Beans takes care of everything—from balance reminders to activity
-notifications—so your customers won't forget about you, allowing you to focus on growing your
-business.
+<Frame>
+  <img src="/assets/images/admin/settings/team-access.webp" alt="Manual install" style={{ borderRadius: '0.5rem' }} />
+</Frame>
 
-**Flexible reward rules**: Beans offers an extensive range of customizable rules that let you
-reward customers for nearly every action that matters to your business.
+### Add a team member
 
-**User-friendly interface**: The interface is incredibly simple and easy to navigate.
+1. From the **Team Access** page, click **Add admin**.
+2. Enter the team member's email address, first name, and last name and click **Add admin**.
+3. Once added, the team member will receive an email with instructions on how to access your
+   Beans workspace.
 
-**Powerful API**: Beans comes with an elegant and robust API, making it quick and easy to
-integrate into your website, ensuring a seamless experience.
+### Remove a team member
 
-**No coding required**: Several plugins are available, enabling you to get started in minutes
-without any coding skills.
+1. From the **Team Access** page, click **Remove** next to the team member's name.
+2. Click **Remove admin** to confirm.
+3. Once removed, the team member will no longer have access to your Beans workspace.
 
-**No legacy systems**: Beans offers a modern, user-friendly alternative to outdated loyalty
-programs, giving you complete control over the reward experience.
+## Plan and Billing
 
-**Transparent pricing**: We offer both a free and a premium plan, with no hidden fees or limits
-on the points you can issue or redeem. Our pricing is easy to understand, with no surprises.
+Get a comprehensive overview of your Beans subscription status and usage.
+You will be able to monitor your order count, subscription tier, and payment settings.
 
-**Excellent support**: When you need assistance, you'll receive fast, personalized help from real
-people.
+<Frame>
+  <img
+    src="/assets/images/admin/settings/plan-and-billing.webp"
+    alt="Manual install"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
 
-### What will my customers see?
+The usage dashboard shows the total number of orders processed this month, helping you track your activity relative to
+your plan's maximum order limit. You'll also find details about your current subscription tier and its associated monthly cost.
 
-With Beans, you have full control over what your customers experience. The Beans API allows
-you to customize the entire loyalty experience to match your brand. Your customers will see
-exactly what you want them to see.
+You can upgrade your plan at any time to increase your order processing capacity or access additional features as your
+business grows. For detailed plan comparisons and volume-based pricing options, visit our
+[pricing page](https://www.trybeans.com/pricing).
 
-### Technical support
+### Account Suspension
 
-**Can I reach an engineer to talk about technical issues?**
+If an invoice remains unpaid 7 days after issuance or after two failed charge attempts,
+your account will be marked as delinquent.
 
-Yes, you can reach out to an engineer for technical issues. Our support team includes
-engineers who are well-equipped to assist with any technical questions. If the first point
-of contact doesn’t have the answer, they will find the right person to help.
+Once marked delinquent, the Beans app will become inactive on your website.
 
-Feel free to email us anytime. We aim to respond as quickly as possible, typically within
-48 hours.
+Please note that if payment is made after delinquency, account reactivation may take some time.
+To prevent these issues, regularly verify that your payment information is up to date.
 
-### Security
+### Refund Policy
 
-We adhere to industry standards, ensuring that every part of our infrastructure and each
-stage of our operations are built with security in mind. Beans uses HTTPS across all
-services, including our public website. We routinely audit our security measures,
-including the certificates we provide, the certificate authorities we rely on, and the
-ciphers we support.
+Beans provides flexible billing options with monthly and annual subscription plans.
 
-### Terms of Service
+#### Annual Plan
 
-You can access our terms of use here:
+A full refund is available for annual subscriptions canceled within 14 days of the initial
+payment. After this period, refunds are not provided.
 
-https://www.trybeans.com/legal/terms
+#### Monthly Plan
 
-If you have any questions or concern regarding our terms of Service, please contact us directly
-at hello@trybeans.com
+For month-to-month plans, refunds are not available for cancellations at the start or during
+the billing cycle.
 
-### Privacy Policy
+### Supported Currencies
 
-We take data privacy seriously. This policy outlines who we are, how we collect, share, and
-use your personal information, and how you can exercise your privacy rights.
+Currently, billing is supported only in USD. Expanding currency support is a priority, and
+additional options will be added in the future.
 
-We recommend reviewing the full privacy policy to stay informed. You can access it here:
-https://www.trybeans.com/legal/terms
-
-For any questions or concerns about how we use your personal information, feel free to reach
-out to us at hello@trybeans.com.
+If your currency differs from USD, billing will still be in USD, with the applicable
+conversion rate set by your bank.
