@@ -147,6 +147,40 @@ To reset synchronization:
 This process will re-establish the connection between your loyalty program and Beans Emails
 without affecting existing customer data or email settings.
 
+## Replacement tags
+
+Replacement tags are dynamic placeholders used in email templates to personalize content for each recipient.
+When an email is sent, these tags are automatically replaced with actual customer data such as names, points balances,
+and transaction details.
+
+### Global tags
+
+Global tags work across all email notifications and help personalize emails to each customer:
+
+- `[%first_name%]`: Customer's first name.
+- `[%last_name%]`: Customer's last name.
+- `[%beans_balance%]`: Customer's current points balance.
+- `[%beans_value%]`: Monetary value of the customer's current points balance (in store currency).
+- `[%tier_name%]`: Customer's loyalty tier level.
+- `[%unsubscribe_link%]`: Mandatory unsubscribe link for customer to opt out of receiving emails.
+
+<Tip>The [%tier_name%] tag will only display data if the tier feature is activated.</Tip>
+
+### Notification-specific tags
+
+Each email notification has unique tags for personalizing content based on specific events.
+
+**Points transactions (debit or credit)**
+
+- `[%transaction_delta%]`: Amount of points credited or debited.
+- `[%transaction_description%]`: Description of the transaction.
+
+**Referral invitations**
+
+- `[%referral_reward%]`: Points awarded for the referral.
+- `[%referrer_name%]`: Name of the referring customer.
+- `[%referral_link%]`: Unique referral invitation link.
+
 ## Important note
 
 Beans Emails is designed specifically for loyalty program notifications. While it effectively
