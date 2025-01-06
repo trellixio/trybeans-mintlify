@@ -60,7 +60,7 @@ after discounts have been applied and before taxes and shipping costs. The follo
 
 For example, consider the following order details:
 
-- Rule value: 5 points/$
+- Rule value: 5 points per dollar
 - Subtotal (Cart value): $100
 - Discount (Coupon code): $20
 - Shipping Fees: $30
@@ -86,63 +86,35 @@ are reverted in proportion to the amount refunded. This maintains the accuracy o
 Total refunds are treated the same way as partial refunds.
 Order cancellation is preferred to total refund, as it maintains a cleaner history of transactions.
 
-## Frequently Asked Questions
+## Frequently asked questions
 
-### How are loyalty revenues generated?
+<Accordion title="What is loyalty revenue?">
+  Loyalty revenue is income generated when customers redeem points in your store. You can track this revenue in the
+  analytics section of your Beans admin dashboard. Only orders with redemption will count towards the loyalty revenue.
+</Accordion>
 
-Loyalty revenues are income generated from your store's rewards program. You can monitor
-this revenue on the Beans's admin interface's analytics page.
-
-#### What accounts for loyalty revenue?
-
-Orders with redemption will count towards the loyalty revenue.
-
-### Enrollment of customers in the rewards program
-
+<Accordion title="How does customer enrollment work?">
 **New Customer registration**
 
-By default, new customers who create an account on your store automatically join the rewards
-program. If the welcome email is enabled, they will receive a notification introducing them
-to the program and outlining its benefits.
+When new customers create an account on your store, they are automatically enrolled in the rewards program.
+If welcome emails are enabled, these customers will receive an introduction email that explains
+the program benefits and how to start earning rewards.
 
 **Existing customers**
 
-Existing customers—those with accounts prior to the inception of the loyalty program are
-automatically enrolled upon activation of the program. However, only customers who have
-opted to receive marketing emails are eligible for auto-enrollment. Like new customers,
-existing customers will receive a welcome email if the notification is activated.
+When you activate the loyalty program, existing customers with accounts are automatically enrolled if they have opted in to receive marketing emails. These customers will receive a welcome email (if enabled) introducing them to the program and its benefits.
 
 **Guest customers**
 
-Guest customers—those who place orders without creating an account are enrolled in the
-rewards program only if they consent to receive marketing offers at checkout. In some
-configurations, this consent option may be selected by default.
-Guests who do not opt-in will not be enrolled. Alternatively, you can
-[set up an email invitations](https://docs.trybeans.com/manage/admin/rules) encouraging
-guest customers to join the program.
+Guest customers (those who place orders without creating an account) are enrolled automatically in the rewards program when they consent to receive marketing offers during checkout. This consent option may be enabled by default depending on your store settings. If the post purchase email is enabled, the guest customer will receive an email inviting them to join the rewards program.
 
-Beyond auto-enrollment, you can add members to the rewards program
-[manually](https://docs.trybeans.com/manage/admin/members#add-a-member) or by
-[importing their details](https://docs.trybeans.com/manage/admin/members#import-members).
+<Info>
+  To fully benefit from the rewards program, guest customers should create an account. Their points will be waiting for
+  them when they sign up using the same email address.
+</Info>
 
-### Loyalty points calculation
+You can also manually enroll new members to the rewards program in two ways:
 
-How are points computed for an order? How do taxes, shipping cost, and discounts affect points
-earned?
-
-Points earned from purchases are based on the order subtotal, which is the value of the order
-after discounts have been applied and before taxes and shipping costs. The following guidelines apply:
-
-- Customers do not earn points for shipping costs. Shipping costs do not affect how many
-  points customers earn for a purchase.
-
-- Discounts applied at checkout decrease the amount of points customers earn for a purchase.
-
-- Taxes applied at checkout do not affect how many points customers earn for a purchase.
-
-- Taxes included in the product price increase the amount of points customers earn for a purchase.
-
-**Example**
-
-A customer has a cart value of \$90. They redeem a \$15 coupon code at checkout and are charged
-\$30 in taxes and \$20 in shipping costs. This customer will only earn points for \$90 - \$15 = \$75.
+- Add members individually through the [Beans members page](https://docs.trybeans.com/manage/admin/members#add-a-member).
+- Import multiple members at once using a [CSV file upload](https://docs.trybeans.com/manage/admin/members#import-members).
+  </Accordion>
