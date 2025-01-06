@@ -46,6 +46,94 @@ To manually connect Beans to your WooCommerce store, follow these steps:
 11. Paste the keys into the Beans interface form field.
 12. Click **Connect** to complete the process.
 
+## Rewards page
+
+The Beans plugin for WooCommerce automatically adds a rewards page to your shop.
+By default, you can access the page at `https://myshop.com/rewards-program`, assuming
+your website's full URL is `https://myshop.com`.
+
+To display the rewards program page, Beans uses the shortcode `[beans_page]`.
+This makes it very easy to edit the page if necessary.
+
+It is recommended to add the link to your rewards program in the main menu to make it easy for your customers to access.
+Here is how to do it: [How to Add Navigation Menu in WordPress](https://www.wpbeginner.com/beginners-guide/how-to-add-navigation-menu-in-wordpress-beginners-guide/)
+
+
+## Redemption
+
+<Frame>
+  <img
+    src="/assets/images/integrations/woocommerce/redemption.webp"
+    alt="Redemption"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+### Minimum points required for redemption
+
+Sets a minimum points threshold that customers must reach before redeeming rewards. By default,
+customers need to accumulate at least 100 points before being eligible for redemption. You can
+adjust this threshold higher to ensure meaningful program engagement and prevent inefficient redemptions.
+For example, if you set the minimum to 500 points, customers would need to earn at least 500 points before
+they can start redeeming rewards.
+
+**How it works:**
+
+1. From the WooCommerce integration dashboard, navigate to **Preferences**.
+2. Locate the **Redemption** section and enter your desired minimum points threshold in the
+   **Minimum Points Required** field.
+3. Click **Save** to apply changes.
+
+<Tip>
+  Choose a minimum threshold that balances customer satisfaction with your business goals. Too high may discourage
+  participation, while too low could reduce program effectiveness.
+</Tip>
+
+### Maximum discount per redemption
+
+Sets a limit on how much of the total purchase price can be discounted through points.
+This ensures that the discounts provided through redemptions remain within acceptable
+limits for your business. For example, if a customer wants to buy a product priced at \$10 and
+has 1000 points (equal to \$10), but the maximum discount is set to 50%, they can only use 500
+points, giving them a \$5 discount.
+
+**How it works:**
+
+1. From the WooCommerce integration dashboard, navigate to **Preferences**.
+2. Locate the **Redemption** section and use the **Maximum Discount Per Redemption** slider to set
+   your desired maximum discount percentage.
+3. Click **Save** to apply changes.
+
+<Tip>
+  Setting a reasonable maximum discount percentage helps maintain a balance between rewarding customers and protecting
+  your profit margins.
+</Tip>
+
+### Eligible collections
+
+Enable point redemption for specific product collections in your store. Customers can then redeem
+points only for products in the selected collections. When no collections are selected, all products
+are eligible for redemption.
+
+**How it works:**
+
+1. From the WooCommerce integrations home page, navigate to **Preferences**.
+2. Locate the **Eligible Collections** section and click on **Select collections**.
+3. Choose the collections you want to make eligible for point redemption.
+4. Click **Save** to confirm.
+
+
+## Auto registration
+
+Automatically enrolls new customers into your rewards program when they create an account
+or make a purchase. This ensures seamless participation and maximum program engagement.
+
+**How it works:**
+
+1. From the WooCommerce integration dashboard, navigate to **Preferences**.
+2. Locate the **Advance** section and switch the **Auto registration** toggle to **On**.
+3. Click **Save** to confirm.
+
 ## Reinstall
 
 If you suspect the Beans plugin isn't properly installed on your WordPress site,
@@ -62,47 +150,6 @@ Beans provides a straightforward solution to address this without any negative s
 1. From the Beans admin dashboard, navigate to the WooCommerce integration home page.
 2. Select **Status** in the integration navigation menu.
 3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
-
-## Rewards page
-
-The Beans plugin for WooCommerce automatically adds a rewards page to your shop.
-By default, you can access the page at `http://myshop.com/rewards-program`, assuming
-your website's full URL is `https://myshop.com`.
-
-To display the rewards program page, Beans uses the shortcode `[beans_page]`.
-This makes it very easy to edit the page if necessary.
-
-It is recommended to add the link to your rewards program in the main menu to make it easy for your customers to access.
-Here is how to do it: [How to Add Navigation Menu in WordPress](https://www.wpbeginner.com/beginners-guide/how-to-add-navigation-menu-in-wordpress-beginners-guide/)
-
-## Caching
-
-Many WordPress websites use caching to improve performance for visitors.
-While caching can enhance website speed and traffic, it can be difficult to debug, especially for dynamic websites.
-
-In most cases, it is recommended **not** to cache dynamic pages because cached versions
-may become outdated or inaccurate. There are two types of pages on a website: static and dynamic.
-A static page has unchanging content, whereas dynamic pages frequently update and are not suitable for caching.
-
-We recommend excluding the rewards program page and the referral program page from your caching system
-because they are dynamic and do not display the same content for each customer.
-
-### WP Rocket
-
-Follow these step-by-step instructions to configure exclusions with WP Rocket:
-
-1. Navigate to the **File Optimization** section in WP Rocket.
-2. Uncheck all checkboxes in the **JavaScript Files** section and save your changes.
-3. Go to the **Advanced Rules** option and add the following lines to the **Never Cache URLs** section:
-
-   ```txt
-   /rewards-program/(.)
-   /referral-program/(.)
-   /my-account/(.*)
-   ```
-
-4. Save your settings.
-5. Clear your cache and visit the program pages in your store.
 
 ## Troubleshooting
 
@@ -130,85 +177,3 @@ issues with connecting Beans to your store.
 - **Invalid WordPress site location**: WordPress must be installed at the root level of your domain or subdomain.
   For example, if you're developing a store at `www.example.com/dev/`, our server will attempt to connect
   to `www.example.com`. To avoid this issue, install the development store on a subdomain like the `dev.example.com`
-
-## Redemption
-
-### Minimum Points Requirement for Redemption
-
-The minimum points requirement establishes a threshold that customers must meet in their
-accounts to qualify for point redemption. This threshold ensures that points are sufficiently
-accumulated before redemption, promoting meaningful engagement with the rewards program.
-
-**Example**
-
-If the minimum points required for redemption is set to 100, customers will need at least 100
-points in their account to redeem rewards.
-
-### Maximum Discount per Redemption
-
-The maximum discount per redemption defines the upper limit of the purchase price that can be
-offset using points. This parameter ensures that point-based discounts remain within predefined boundaries.
-
-**Examples**
-
-If a customer is purchasing a product worth \$10 and has 1000 points (equivalent to \$10)
-and the maximum discount is set to 50%, they will be able to redeem
-only 500 points, resulting in a \$5 discount.
-
-### Subscription Redemption
-
-In order to allow customers to offset the cost of their subscription renewals, the subscription
-redemption feature enables them to apply earned points directly to their payments. This
-functionality helps to enhance the perceived value of your reward program.
-
-### Role Exclusion
-
-The Role Exclusion feature allows you to define specific WordPress user roles that should be
-excluded from earning rewards in the program. Any user assigned to these roles will not
-accumulate rewards for their purchases.
-
-When specifying roles in this field, it is important to note that it is case-sensitive. Ensure
-you enter the role names exactly as they appear in your WordPress settings to avoid any
-discrepancies.
-
-### Eligible Collections
-
-Use this option to specify collections eligible for points redemption. By selecting specific
-collections, you can restrict redemptions to those collections only.
-
-If no collections are selected, redemption will be allowed on all collections by default.
-
-<Frame>
-  <img
-    src="/assets/images/integrations/woocommerce/redemption.webp"
-    alt="Redemption"
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
-
-### Display
-
-**Redemption on Checkout**
-
-Enable this option to show the redemption button on the checkout page, allowing customers to
-redeem points directly during their purchase.
-
-**Product Points**
-
-Activate this setting to display points information on individual product pages, helping
-customers understand how many points they can earn or redeem for specific products.
-
-**Cart Notices**
-
-Show customers their points balance with a notification on the cart page by enabling this
-option. This keeps them informed about their rewards during checkout.
-
-**Beans Watermark**
-
-Disable this option to remove the "Powered by Beans" watermark from the footer of the rewards
-program page, ensuring a more branded appearance for your store.
-
-**Auto Registration**
-
-Turn this setting on to automatically enroll new customers in the rewards program, simplifying
-the registration process and encouraging engagement.
