@@ -54,10 +54,7 @@
   "navigation": [
     {
       "group": "Get started",
-      "pages": [
-        "start/introduction",
-        "start/faq"
-      ]
+      "pages": ["start/introduction", "start/faq"]
     },
     {
       "group": "Manage",
