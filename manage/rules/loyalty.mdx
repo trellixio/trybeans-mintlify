@@ -4,6 +4,44 @@ description: 'Get X points for each dollar spent in our shop.'
 icon: 'heart'
 ---
 
+<Info>
+  The loyalty rule is one of the cornerstone rules of the rewards program and is active by default for all rewards
+  programs.
+</Info>
+
+<Tip>The recommended value for this rule is between 5 and 20 points per dollar spent in the store.</Tip>
+
+The loyalty rule determines how customers are rewarded for their purchases in your shop. By
+offering points for each dollar spent, you incentivize customers to return and make additional
+purchases, thereby increasing customer retention and satisfaction. This rule allows you to
+specify the number of points customers will earn for every dollar (or equivalent currency unit) spent in your store.
+
+## How it works
+
+Points are calculated based on the final value of the order after applying discounts but
+before adding shipping fees and taxes. This method ensures that the rewards are fair and
+reflect the actual spend on products.
+
+Discounts applied at checkout decrease the amount of points customers earn for a purchase.
+Shipping costs do not affect how many points customers earn for a purchase.
+Taxes applied at checkout do not affect how many points customers earn for a purchase.
+Taxes included in the product price increase the amount of points customers earn for a
+purchase.
+
+For example, consider the following order details:
+
+- Rule value: 5 points/$
+- Subtotal (Cart value): $100
+- Discount (Coupon code): $20
+- Shipping Fees: $30
+- Taxes: $40
+- Total: $150
+
+In this scenario, points are awarded based on the subtotal after the discount. The customer
+will earn points on the $80 spent on products, excluding shipping fees and taxes.
+
+$$ Points earned = Rule value _ (Subtotal − Discount) = 5 points/$ _ ($100−$20) = 400 points $$
+
 ## How are loyalty revenues generated?
 
 Loyalty revenues are income generated from your store's rewards program. You can monitor
@@ -15,20 +53,20 @@ Orders with redemption will count towards the loyalty revenue.
 
 ## Enrollment of customers in the rewards program
 
-### New Customer Registration
+### New customer registration
 
 By default, new customers who create an account on your store automatically join the rewards
 program. If the welcome email is enabled, they will receive a notification introducing them
 to the program and outlining its benefits.
 
-### Existing Customers
+### Existing customers
 
 Existing customers—those with accounts prior to the inception of the loyalty program are
 automatically enrolled upon activation of the program. However, only customers who have
 opted to receive marketing emails are eligible for auto-enrollment. Like new customers,
 existing customers will receive a welcome email if the notification is activated.
 
-### Guest Customers
+### Guest customers
 
 Guest customers—those who place orders without creating an account are enrolled in the
 rewards program only if they consent to receive marketing offers at checkout. In some
@@ -41,80 +79,15 @@ Beyond auto-enrollment, you can add members to the rewards program
 [manually](https://docs.trybeans.com/manage/admin/members#add-a-member) or by
 [importing their details](https://docs.trybeans.com/manage/admin/members#import-members).
 
-## Loyalty points calculation
-
-How are points computed for an order? How do taxes, shipping cost, and discounts affect points
-earned?
-
-Points earned from purchases are based on the order subtotal, which is the value of the order
-after discounts have been applied and before taxes and shipping costs. The following guidelines apply:
-
-- Customers do not earn points for shipping costs. Shipping costs do not affect how many
-  points customers earn for a purchase.
-
-- Discounts applied at checkout decrease the amount of points customers earn for a purchase.
-
-- Taxes applied at checkout do not affect how many points customers earn for a purchase.
-
-- Taxes included in the product price increase the amount of points customers earn for a purchase.
-
-For example, consider the following order details:
-
-- Rule value: 5 points per dollar
-- Subtotal (Cart value): $100
-- Discount (Coupon code): $20
-- Shipping Fees: $30
-- Taxes: $40
-- Total: $150
-
-In this scenario, points are awarded based on the subtotal after the discount.
-The customer will earn points on the $80 spent on products, excluding shipping fees and taxes.
-
-```math
-Points earned = Rule value * (Subtotal − Discount) = 5 points/$ * ($100−$20) = 400 points
-```
-
 ### Order status
 
-**Payment status**: Customers are awarded points only when the order has been paid.
-Orders pending payment do not receive points.
+**Payment status**: Customers are awarded points only when the order has been paid. Orders
+pending payment do not receive points.
 
-**Order cancellations**: When an order is cancelled, the points awarded for that order are also cancelled.
+**Order cancellations**: When an order is cancelled, the points awarded for that order are also
+cancelled.
 
-**Partial refunds**: When an order is partially refunded, the customer loyalty points associated with that order
-are reverted in proportion to the amount refunded. This maintains the accuracy of the rewards program.
-Total refunds are treated the same way as partial refunds.
-Order cancellation is preferred to total refund, as it maintains a cleaner history of transactions.
-
-## Frequently asked questions
-
-<Accordion title="What is loyalty revenue?">
-  Loyalty revenue is income generated when customers redeem points in your store. You can track this revenue in the
-  analytics section of your Beans admin dashboard. Only orders with redemption will count towards the loyalty revenue.
-</Accordion>
-
-<Accordion title="How does customer enrollment work?">
-**New Customer registration**
-
-When new customers create an account on your store, they are automatically enrolled in the rewards program.
-If welcome emails are enabled, these customers will receive an introduction email that explains
-the program benefits and how to start earning rewards.
-
-**Existing customers**
-
-When you activate the loyalty program, existing customers with accounts are automatically enrolled if they have opted in to receive marketing emails. These customers will receive a welcome email (if enabled) introducing them to the program and its benefits.
-
-**Guest customers**
-
-Guest customers (those who place orders without creating an account) are enrolled automatically in the rewards program when they consent to receive marketing offers during checkout. This consent option may be enabled by default depending on your store settings. If the post purchase email is enabled, the guest customer will receive an email inviting them to join the rewards program.
-
-<Info>
-  To fully benefit from the rewards program, guest customers should create an account. Their points will be waiting for
-  them when they sign up using the same email address.
-</Info>
-
-You can also manually enroll new members to the rewards program in two ways:
-
-- Add members individually through the [Beans members page](https://docs.trybeans.com/manage/admin/members#add-a-member).
-- Import multiple members at once using a [CSV file upload](https://docs.trybeans.com/manage/admin/members#import-members).
-  </Accordion>
+**Partial refunds**: When an order is partially refunded, the customer loyalty points associated
+with that order are reverted in proportion to the amount refunded. This maintains the accuracy of
+the rewards program. Total refunds are treated the same way as partial refunds. Order cancellation
+is preferred to total refund, as it maintains a cleaner history of transactions.
