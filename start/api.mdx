@@ -6,121 +6,15 @@ description: 'Integrate Beans with custom e-commerce platforms'
 Beans provides an API designed for seamless integration with custom online stores. The API
 facilitates direct communication between your e-commerce platform and Beans, enabling the
 implementation of loyalty and referral features.
+Check out our [API documentation guide](https://api.trybeans.com/v3/doc/).
 
-### Storefront integration
+## Storefront integration
 
 The storefront integration script enables Beans to display customer-facing elements, such as
 loyalty program details, and to track customer interactions, including referrals and
 engagement.
-[Add Beans to Storefront]()
 
-### Webhooks integration
-
-Webhooks allow Beans to receive notifications when specific events occur in your store, such
-as order completion. These notifications trigger event-based actions, including awarding
-points for purchases to ensures synchronization and automation of rewards processing.
-
-[Setup Beans Webhooks]()
-
-## Webhooks
-
-Setting up Beans Webhooks for your online store
-
-Webhooks provide a mechanism to notify Beans of specific events in your store, such as a
-completed order. This allows Beans to automate actions like awarding loyalty points. Webhooks
-are implemented using URLs to which a JSON payload containing relevant event data is sent.
-
-### Customer webhook
-
-The Customer Webhook notifies Beans when a new customer registers on your store. To transmit
-customer registration data to Beans, use an HTTP POST request structured as follows:
-
-**Customer data**
-
-```yaml
-{
-  'id': 1847,
-  'first_name': 'John',
-  'last_name': 'Doe',
-  'email': 'john.doe@example.com',
-  'is_newsletter': True,
-  'tags': ['loyal', 'paying'],
-  'created_at': '2020-02-06T12:49:47-05:00',
-  'updated_at': '2022-02-06T12:49:47-05:00',
-}
-```
-
-**Create or update a customer**
-
-```yaml
-curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/customer/hook_created \
-  --request POST \
-  --user :sk_xxxxxxxxxxxxxxxxx \
-  --header "Content-Type: application/json" \
-  --data '<<customer_data>>'
-```
-
-**Delete a customer**
-
-```yaml
-curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/customer/hook_deleted \
-  --request POST \
-  --user :sk_xxxxxxxxxxxxxxxxx \
-  --header "Content-Type: application/json" \
-  --data '<<customer_data>>'
-```
-
-### Order webhook
-
-Order Webhook is to let Beans know when a new order is placed in your shop. To post new order
-information to Beans just use an HTTP POST request like this one:
-
-**Order data**
-
-An order can contain a customer object.
-
-```yaml
-order_data = {
-    "id": 13207,
-    "currency": "USD",
-    "email": "john.doe@example.com",
-    "ref": "13207",
-    "total": "53.00",
-    "subtotal": "33.00",
-    "amount_shipping": "20.00",
-    "amount_giftcard": "0.00",
-    "amount_tax": "0.00",
-    "cancelled_at": None,
-    "processed_at": "2022-02-06T12:49:47-05:00",
-    "is_fulfilled": False,
-    "is_refunded": True,
-    "is_paid": True,
-    "customer": {
-        "id": 1847,
-        "first_name": "John",
-        "last_name": "Doe",
-        "email": "john.doe@example.com",
-        "is_newsletter": True,
-        "tags": ["loyal", "paying"],
-        "created_at": "2020-02-06T12:49:47-05:00",
-        "updated_at": "2022-02-06T12:49:47-05:00",
-    }
-}
-```
-
-**Create or update an order**
-
-```yaml
-curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/order/hook_created \
-  --request POST \
-  --user :sk_xxxxxxxxxxxxxxxxx \
-  --header "Content-Type: application/json" \
-  --data '<<order_data>>'
-```
-
-## Storefront integration
-
-Setting up beans.js on your e-commerce store
+### Storefront
 
 Beans.js is a lightweight JavaScript library designed to integrate Beans with any e-commerce
 platform. It enables seamless addition of Beans applications to your store with minimal coding
@@ -226,3 +120,98 @@ Beans3.Radix.init(config);
 
 After successfully integrating Beans with your storefront, the reward and referral program
 pages should now be visible and functional on your store.
+
+## Webhooks integration
+
+Webhooks provide a mechanism to notify Beans of specific events in your store, such as a
+completed order. This allows Beans to automate actions like awarding loyalty points. Webhooks
+are implemented using URLs to which a JSON payload containing relevant event data is sent.
+
+### Customer webhook
+
+The Customer Webhook notifies Beans when a new customer registers on your store. To transmit
+customer registration data to Beans, use an HTTP POST request structured as follows:
+
+**Customer data**
+
+```yaml
+{
+  'id': 1847,
+  'first_name': 'John',
+  'last_name': 'Doe',
+  'email': 'john.doe@example.com',
+  'is_newsletter': True,
+  'tags': ['loyal', 'paying'],
+  'created_at': '2020-02-06T12:49:47-05:00',
+  'updated_at': '2022-02-06T12:49:47-05:00',
+}
+```
+
+**Create or update a customer**
+
+```yaml
+curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/customer/hook_created \
+  --request POST \
+  --user :sk_xxxxxxxxxxxxxxxxx \
+  --header "Content-Type: application/json" \
+  --data '<<customer_data>>'
+```
+
+**Delete a customer**
+
+```yaml
+curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/customer/hook_deleted \
+  --request POST \
+  --user :sk_xxxxxxxxxxxxxxxxx \
+  --header "Content-Type: application/json" \
+  --data '<<customer_data>>'
+```
+
+### Order webhook
+
+Order Webhook is to let Beans know when a new order is placed in your shop. To post new order
+information to Beans just use an HTTP POST request like this one:
+
+**Order data**
+
+An order can contain a customer object.
+
+```yaml
+order_data =
+{
+    "id": 13207,
+    "currency": "USD",
+    "email": "john.doe@example.com",
+    "ref": "13207",
+    "total": "53.00",
+    "subtotal": "33.00",
+    "amount_shipping": "20.00",
+    "amount_giftcard": "0.00",
+    "amount_tax": "0.00",
+    "cancelled_at": None,
+    "processed_at": "2022-02-06T12:49:47-05:00",
+    "is_fulfilled": False,
+    "is_refunded": True,
+    "is_paid": True,
+    "customer": {
+        "id": 1847,
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "is_newsletter": True,
+        "tags": ["loyal", "paying"],
+        "created_at": "2020-02-06T12:49:47-05:00",
+        "updated_at": "2022-02-06T12:49:47-05:00",
+    }
+}
+```
+
+**Create or update an order**
+
+```yaml
+curl https://hooks.radix.trybeans.com/v3/hook/radix/vanilla/order/hook_created \
+  --request POST \
+  --user :sk_xxxxxxxxxxxxxxxxx \
+  --header "Content-Type: application/json" \
+  --data '<<order_data>>'
+```

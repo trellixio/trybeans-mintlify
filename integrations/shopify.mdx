@@ -22,14 +22,15 @@ through the Shopify App Store. Follow the
 [Shopify guideline](https://help.shopify.com/en/manual/apps/installing-apps#install-through-the-shopify-app-store)
 on how to install an app through the Shopify App Store.
 
-## Reinstall
+## Customer accounts
 
-If you suspect the Beans plugin isn't properly installed on your Shopify site,
-Beans provides a straightforward solution to address this without any negative side effects.
+In order to get the app to work as expected, it is required to enable customer accounts for your Shopify Store.
+Shopify gives you the option to set customer accounts as disabled, optional or required.
+Beans requires customer accounts to be set to optional or required.
+Beans support both _Classic customer accounts_ and _New customer accounts_.
 
-1. From the Beans admin dashboard, navigate to the Shopify integration home page.
-2. Select **Status** in the integration navigation menu.
-3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+Here is how to enable customer accounts with Shopify:
+[Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
 
 ## Shopify OS 2.0
 
@@ -59,12 +60,118 @@ The Shopify navigation tool let you dynamically set up a navigation menu for you
 We recommend adding the link to the rewards program in the Main menu in order to make it easy for your customers to access.
 Here is how to do: [Editing Shopify store menu](https://help.shopify.com/en/manual/sell-online/online-store/menus-and-links/editing-menus)
 
-## Customer accounts
+## Redemption
 
-In order to get the app to work as expected, it is required to enable customer accounts for your Shopify Store.
-Shopify gives you the option to set customer accounts as disabled, optional or required.
-Beans requires customer accounts to be set to optional or required.
-Beans support both _Classic customer accounts_ and _New customer accounts_.
+<Frame>
+  <img src="/assets/images/integrations/shopify/redemption.webp" alt="Redemption" style={{ borderRadius: '0.5rem' }} />
+</Frame>
 
-Here is how to enable customer accounts with Shopify:
-[Enable customer accounts](https://help.shopify.com/en/manual/checkout-settings/customer-accounts)
+### Minimum points required for redemption
+
+Sets a minimum points threshold that customers must reach before redeeming rewards. By default,
+customers need to accumulate at least 100 points before being eligible for redemption. You can
+adjust this threshold higher to ensure meaningful program engagement and prevent inefficient redemptions.
+For example, if you set the minimum to 500 points, customers would need to earn at least 500 points before
+they can start redeeming rewards.
+
+**How it works:**
+
+1. From the Shopify integration dashboard, navigate to **Preferences**.
+2. Locate the **Redemption** section and enter your desired minimum points threshold in the
+   **Minimum Points Required** field.
+3. Click **Save** to apply changes.
+
+<Tip>
+  Choose a minimum threshold that balances customer satisfaction with your business goals. Too high may discourage
+  participation, while too low could reduce program effectiveness.
+</Tip>
+
+### Maximum discount per redemption
+
+Sets a limit on how much of the total purchase price can be discounted through points.
+This ensures that the discounts provided through redemptions remain within acceptable
+limits for your business. For example, if a customer wants to buy a product priced at \$10 and
+has 1000 points (equal to \$10), but the maximum discount is set to 50%, they can only use 500
+points, giving them a \$5 discount.
+
+**How it works:**
+
+1. From the Shopify integration dashboard, navigate to **Preferences**.
+2. Locate the **Redemption** section and use the **Maximum Discount Per Redemption** slider to set
+   your desired maximum discount percentage.
+3. Click **Save** to apply changes.
+
+<Tip>
+  Setting a reasonable maximum discount percentage helps maintain a balance between rewarding customers and protecting
+  your profit margins.
+</Tip>
+
+## Using discount codes with points redemption
+
+When customers redeem points, Beans generates a discount code that automatically applies to their cart at checkout. The ability to combine this with other discount codes depends on your Shopify plan:
+
+**Shopify (Classic)**
+
+- Only one discount code can be used per checkout.
+- Points redemption discount codes cannot be combined with other discounts.
+
+**Shopify Plus**
+
+- Multiple discount codes can be enabled at checkout.
+- Some discount codes may still be incompatible due to conflicting rules.
+- Review your discount settings to ensure smooth points redemption.
+
+## Shopify customer tags
+
+When you enable [tiers](https://docs.trybeans.com/manage/admin/tiers) in Beans, the system automatically adds tier-specific tags to your customers in Shopify. These tags make it easy to identify customer tier levels, create segments, track progression, and target marketing campaigns based on loyalty tiers directly in Shopify.
+
+<Frame>
+  <img
+    src="/assets/images/integrations/shopify/customer-tag.webp"
+    alt="Reset synchronization"
+    style={{ borderRadius: '0.5rem' }}
+  />
+</Frame>
+
+For example, if a customer reaches the Gold tier, they'll receive the tag **Beans-Tier-Gold** in their Shopify profile.
+
+<Tip>
+  Tier tagging is automatically enabled as soon as you activate tiers in Beans and connect your Shopify store - no
+  additional setup required.
+</Tip>
+
+## Reinstall
+
+If you suspect the Beans plugin isn't properly installed on your Shopify site,
+Beans provides a straightforward solution to address this without any negative side effects.
+
+1. From the Beans admin dashboard, navigate to the Shopify integration home page.
+2. Select **Status** in the integration navigation menu.
+3. From the **Actions** dropdown on the top right, select **Reinstall Beans**.
+
+## Uninstall Beans from Shopify
+
+Follow these steps to completely remove Beans from your Shopify store:
+
+<Frame>
+  <img src="/assets/images/integrations/shopify/uninstall.webp" alt="uninstall" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+1. From your Shopify admin, go to **Apps**.
+2. Find Beans in your installed apps list.
+3. Click **Delete** to remove the application.
+4. Remove the automatically created program pages:
+   - Go to **Online Store > Pages**
+   - Find and delete the "Rewards Program" page
+   - Find and delete the "Referral Program" page
+5. Remove the Beans authentication code:
+
+   - Go to **Online Store > Themes**
+   - Click **Actions > Edit code**
+   - Open the `theme.liquid` file
+   - Find and delete the following snippet:
+
+   ```js
+    <script>window.beans_cjs_id = '{{ customer.id }}';
+    window.beans_cjs_email = '{{ customer.email }}';</script>
+   ```
