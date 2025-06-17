@@ -98,7 +98,8 @@
         "integrations/twitter",
         "integrations/tokenify",
         "integrations/beansemail",
-        "integrations/bigcommerce"
+        "integrations/bigcommerce",
+        "integrations/tiktok"
       ]
     }
   ],
