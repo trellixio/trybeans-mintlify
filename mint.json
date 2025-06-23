@@ -46,6 +46,11 @@
       "url": "integrations"
     },
     {
+      "name": "Toolkits",
+      "icon": "gear-code",
+      "url": "toolkits"
+    },
+    {
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://www.trybeans.com/blog"
@@ -55,6 +60,10 @@
     {
       "group": "Get started",
       "pages": ["start/introduction", "start/faq"]
+    },
+    {
+      "group": "Toolkits",
+      "pages": ["toolkits/metafields"]
     },
     {
       "group": "Manage",
