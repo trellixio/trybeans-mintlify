@@ -57,3 +57,4 @@ You can also preview changes using PRs, which generates a preview link of the do
 - [Shopify Help Center](https://help.shopify.com/en/)
 - [Shopify Dev Docs](https://shopify.dev/docs/)
 - [Stripe Docs](https://stripe.com/docs)
+
