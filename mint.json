@@ -95,10 +95,12 @@
         "integrations/instagram",
         "integrations/judgeme",
         "integrations/klaviyo",
+        "integrations/tiktok",
         "integrations/twitter",
         "integrations/tokenify",
         "integrations/beansemail",
         "integrations/bigcommerce"
+        
       ]
     }
   ],
