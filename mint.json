@@ -95,6 +95,7 @@
         "integrations/instagram",
         "integrations/judgeme",
         "integrations/klaviyo",
+        "integrations/snapchat",
         "integrations/twitter",
         "integrations/tokenify",
         "integrations/beansemail",
